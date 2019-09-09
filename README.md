@@ -1,2 +1,3 @@
 # inventix
-a mostly simple inventory system for schools and other organisations
+a mostly* simple inventory system for schools and other organisations
+(* mostly = hopefuly)
