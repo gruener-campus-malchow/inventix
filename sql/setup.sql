@@ -40,3 +40,10 @@ CREATE TABLE gebaeude (
     id PRIMARY KEY AUTOINCREMENT,
     name TEXT
 );
+
+CREATE TABLE raum (
+    id PRIMARY KEY AUTOINCREMENT,
+    name TEXT,
+    gebaeude_id INT,
+    FOREIGN KEY gebaeude_id REFERENCES gebaeude(id)
+);
