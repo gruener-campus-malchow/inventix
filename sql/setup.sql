@@ -54,3 +54,10 @@ CREATE TABLE moebel (
     raum_id INT,
     FOREIGN KEY raum_id REFERENCES raum(id)
 );
+
+CREATE TABLE position (
+    id PRIMARY KEY AUTOINCREMENT,
+    name TEXT,
+    moebel_id INT,
+    FOREIGN KEY moebel_id REFERENCES moebel(id)
+);
