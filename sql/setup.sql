@@ -23,3 +23,9 @@ CREATE TABLE foto (
     uri TEXT,
     visible BOOL
 );
+
+CREATE TABLE datei (
+    id PRIMARY KEY AUTOINCREMENT,
+    uri TEXT,
+    visible BOOL
+);
