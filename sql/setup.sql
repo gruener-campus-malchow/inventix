@@ -29,3 +29,9 @@ CREATE TABLE datei (
     uri TEXT,
     visible BOOL
 );
+
+CREATE TABLE tag (
+    id PRIMARY KEY AUTOINCREMENT,
+    name TEXT,
+    visible BOOL
+);
