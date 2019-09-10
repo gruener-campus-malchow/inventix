@@ -74,3 +74,10 @@ CREATE TABLE gegenstand (
     FOREIGN KEY ort_id REFERENCES ort(id),
     FOREIGN KEY nutzer_id REFERENCES nutzer(id)
 );
+
+CREATE TABLE datei_gegenstand (
+    datei_id INT,
+    gegenstand_id INT,
+    FOREIGN KEY datei_id REFERENCES datei(id),
+    FOREIGN KEY gegenstand_id REFERENCES gegenstand(id)
+)
