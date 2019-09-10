@@ -17,3 +17,9 @@ CREATE TABLE nutzer (
     fachbereich_id INT,
     FOREIGN KEY fachbereich_id REFERENCES fachbereich(id)
 )
+
+CREATE TABLE foto (
+    id PRIMARY KEY AUTOINCREMENT,
+    uri TEXT,
+    visible BOOL
+)
