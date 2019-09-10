@@ -47,3 +47,10 @@ CREATE TABLE raum (
     gebaeude_id INT,
     FOREIGN KEY gebaeude_id REFERENCES gebaeude(id)
 );
+
+CREATE TABLE moebel (
+    id PRIMARY KEY AUTOINCREMENT,
+    name TEXT,
+    raum_id INT,
+    FOREIGN KEY raum_id REFERENCES raum(id)
+);
