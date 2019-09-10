@@ -55,9 +55,22 @@ CREATE TABLE moebel (
     FOREIGN KEY raum_id REFERENCES raum(id)
 );
 
-CREATE TABLE position (
+CREATE TABLE ort (
     id PRIMARY KEY AUTOINCREMENT,
     name TEXT,
     moebel_id INT,
     FOREIGN KEY moebel_id REFERENCES moebel(id)
+);
+
+CREATE TABLE gegenstand (
+    id PRIMARY KEY AUTOINCREMENT,
+    name TEXT,
+    notes TEXT,
+    foto_id INT,
+    ort_id INT,
+    nutzer_id INT,
+    visible BOOL,
+    FOREIGN KEY foto_id REFERENCES foto(id),
+    FOREIGN KEY ort_id REFERENCES ort(id),
+    FOREIGN KEY nutzer_id REFERENCES nutzer(id)
 );
