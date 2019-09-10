@@ -7,3 +7,13 @@ CREATE TABLE fachbereich (
     abkuerzung TEXT
 )
 
+CREATE TABLE nutzer (
+    id PRIMARY KEY AUTOINCREMENT,
+    nickname TEXT UNIQUE,
+    vorname TEXT,
+    nachname TEXT,
+    email TEXT,
+    password TEXT,
+    fachbereich_id INT,
+    FOREIGN KEY fachbereich_id REFERENCES fachbereich(id)
+)
