@@ -35,3 +35,8 @@ CREATE TABLE tag (
     name TEXT,
     visible BOOL
 );
+
+CREATE TABLE gebaeude (
+    id PRIMARY KEY AUTOINCREMENT,
+    name TEXT
+);
