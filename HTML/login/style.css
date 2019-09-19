@@ -1,5 +1,11 @@
-
+body{
+	background-image: url(../logo_gcm.svg);
+	background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
 div.loginbereich{
+	background-color: white;
 	width: 30%;
 	min-width: 200px;
 	border: 1px solid black;
