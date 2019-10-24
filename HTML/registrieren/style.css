@@ -8,9 +8,11 @@ div.loginbereich{
 	 /*height: 150px;*/
 }
 h1.topname {
-	font-size: 60px;
-    border-bottom: 5px solid black;
-    width: 450px;
+	font-size: 34px;
+position: absolute;
+top: -21px;
+color: white;
+left: 10px;
 }
 
 
