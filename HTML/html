@@ -8,8 +8,14 @@
 	</head>
     <body>
         <div class="mid_wrap" id="mid_wrap"> 
-            <div class="gcm_wrap" id="gcm_wrap" > </div>
-            <div class="welc_wrap" id="welc_wrap" > </div>
+            <div class="gcm_wrap" id="gcm_wrap" > 
+                <h1 class="header" id="header1"> 
+                    GCM Inventix</h1>
+            </div>
+            <div class="welc_wrap" id="welc_wrap" > 
+                <p class="text" id="welc_wrapper" >             
+            Hallo Müller! Willkommen im Inventix
+            </div>
             <div class="button_wrap" id="button_wrap" > 
                 <button class="forward_button" id="forward_button_1"> Gesamtes Inventar durchwühlen </button>            
                 <button class="forward_button" id="forward_button_2"> Suche nach Gegenständen </button>             
