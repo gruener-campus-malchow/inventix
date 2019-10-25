@@ -13,7 +13,7 @@
                     GCM Inventix</h1>
             </div>
             <div class="welc_wrap" id="welc_wrap" > 
-                <p class="text" id="welc_wrapper" >             
+                <p class="text" id="text" >             
             Hallo Müller! Willkommen im Inventix
             </div>
             <div class="button_wrap" id="button_wrap" > 
