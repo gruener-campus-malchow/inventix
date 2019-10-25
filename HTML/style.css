@@ -5,9 +5,73 @@ body{
 	padding: 0px;
 	width: 100%;
 	height: 100%;
-	/*background-color: #43907d;*/
+    /*
+    background-image: url(logo_gcm.svg);
+	background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+	background-color: #43907d;
+    */
+}
+button.forward_button {
+	
+    border-style: solid;
+    border-width: 0px 0px 3px;
+    box-shadow: 0 -1px 0 rgba(255, 255, 255, 0.1) inset;
+    color: #FFFFFF;	   
+    border-radius: 6px;
+    cursor: pointer;
+    display: inline-block;
+    font-style: normal;
+    overflow: hidden;
+    text-align: center;
+    text-decoration: none;
+    text-overflow: ellipsis;
+    transition: all 200ms ease-in-out 0s;
+    white-space: nowrap;	
+    font-family: "Gotham Rounded A","Gotham Rounded B",Helvetica,Arial,sans-serif;
+    font-weight: 700;	
+    padding: 19px 39px 18px;
+    font-size: 18px;    
+    border-color: #3AC162;
+	background-color: #5FCF80;
+    width: 40%;	
+    margin-top: 10px;
 }
 
+div.button_wrap{
+    padding-top: 20px;
+    border-top: 2px solid black;
+    width: max-content;
+}
+
+div.mid_wrap{
+  width: calc(100% - 20px);
+    border: 1px solid black;
+    left: 10px;
+    top: 65px;
+    height: calc(100% - 76px);
+    position: absolute;
+
+}
+
+h1.header{
+    font-size: 500%;
+    height: 76px;
+    margin: 0px;
+    padding: 0px;
+    right: 6%;
+    position: relative;
+}
+h1.subheader{
+   font-size: 250%;
+    height: min-content;
+    margin: 0px;
+    padding: 0px;
+    right: -8%;
+    position: relative;
+    width: min-content;
+}
 
 button.seitenbutton{
 	background-color: unset;
@@ -54,5 +118,37 @@ div.header{
 	position: relative;
 	width: 100%;
 	height: 50px;
-    background-color: #063e0c;
+    background-color: #36804B;
 }
+
+
+
+div.loginbereich{
+	width: 30%;
+	min-width: 200px;
+	border: 1px solid black;
+    border-radius: 5px;
+    text-align: center;
+    background-color: white;
+	 /*height: 150px;*/
+}
+h1.topname {
+	font-size: 34px;
+}
+
+
+div.loginbereich input{
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+div.loginbereich p{
+    margin: 0px;
+    margin-top: 8px;
+}
+
+p.info {
+	color: red;
+}
+
+
