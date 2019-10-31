@@ -1,4 +1,6 @@
-
+body{
+    background-image: url(https://www.gruener-campus-malchow.de/logo.jpg);
+}
 div.loginbereich{
 	width: 30%;
 	min-width: 200px;
@@ -6,8 +8,10 @@ div.loginbereich{
     border-radius: 5px;
     text-align: center;
 	 /*height: 150px;*/
+    min-width: 250px;
 }
 h1.topname {
+
 	font-size: 40px;
     position: absolute;
     top: -29px;
