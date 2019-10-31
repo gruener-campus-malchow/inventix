@@ -11,9 +11,12 @@ div.loginbereich{
     min-width: 250px;
 }
 h1.topname {
-	font-size: 60px;
-    border-bottom: 7px solid black;
-    width: 200;
+
+	font-size: 40px;
+    position: absolute;
+    top: -29px;
+    color: white;
+    left: 29px;
 }
 
 
