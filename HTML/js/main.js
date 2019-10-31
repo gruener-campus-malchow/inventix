@@ -1,7 +1,7 @@
 'use strict';
 
 function insertLoadAnimation(){
-     
+     //alert('loading');
      var body = document.getElementsByTagName('body')[0];
      var loadlogo = document.createElement('img');
      var url = document.createAttribute('src');
@@ -23,42 +23,36 @@ function disableLoadAnimation(){
     loadAnimation.style.display = 'none';
 }
 
-
 function loadContentFromAPI(){
     insertLoadAnimation();
-    disableLoadAnimation()
+    disableLoadAnimation();
 };
 
 function loginUser (){
-    //enableLoadAnimation();
+    enableLoadAnimation();
+    alert('wanna login');
     var username = document.getElementById('loginUserName').value;
     var password = document.getElementById('loginPassWord').value;
     
     const url = 'http://192.168.3.178:8000/login';
-    const data = { user: username, hash: password };
-
-try {
-  const response = await fetch(url, {
-    method: 'POST', // or 'PUT'
-    body: JSON.stringify(data), // data can be `string` or {object}!
-    headers: {
-      'Content-Type': 'application/json'
-    }
-  });
-  const json = await response.json();
+    const data = {user: username, hash: password};
+    // fetch: https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/fetch
+    try {
+        const response = fetch(url, {
+            method: 'POST', // or 'PUT'
+            body: JSON.stringify(data), // data can be `string` or {object}!
+            headers: {'Content-Type': 'application/json'},
+            mode:'no-cors'
+          });
+          
+          
+  const json = response.json();
   console.log('Success:', JSON.stringify(json));
 } catch (error) {
   console.error('Error:', error);
 }
     
-    
-    
-    
-    
     alert(username + ' ' + password);
-    
-    
-    
     
 
 };
