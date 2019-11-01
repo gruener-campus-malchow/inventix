@@ -2,29 +2,29 @@
 	<head>
 		<meta charset="utf-8"> 
 		<link rel="stylesheet" type="text/css" href="style.css" media="screen" />
-		<link rel="stylesheet" type="text/css" href="http://timweb.ddns.net/kuchen/style.css" media="screen" />
-		<link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
 		<script src="main.js" async> </script>
 		<title>Inventix</title>
 	</head>
     <body>
-        <div class="header_wrap" id="header_wrap" >
-            <h1 class="header" id="header1">GCM Inventix</h1>
-        </div>
-        <div class="profile_wrap" id="profile_wrap2" >
-            <button class="profile_button" id="profile_button_1"> Profile </button>            
-            <button class="logout_button" id="logout_button_1"> Logout </button>
-        </div>
+        <div class="header"> 
+				<input class="searchinput" type="text" id="searchquerry" placeholder="Was suchen Sie ?"> 
+				<button class="searchbutton" > 🔍 </button>
+				<button class="benutzerbutton" > 👤 </button>
+		</div>
+        <center>
+       <div class="mid_wrap" id="mid_wrap"> 
+            <div class="gcm_wrap" id="gcm_wrap" > 
+                <h1 class="header" id="header1">GCM</h1>
+                <h1 class="subheader" id="subheader1">Inventix</h1>
+            </div>
         <div class="filter_wrap" id="filter_wrap" >
-            <h1 class="header" id="header_filter">Filter</h1>
-            <p1 class="text" id="text1">nach ID</p1>
-            <input id="filter_id" name="filter_id">
-            <p2 class="text" id="text2">nach Name</p2>
-            <input id="filter_name" name="filter_name">
-            <p3 class="text" id="text3">nach Tag</p3>
+            <h3 class="header" id="header_filter">Filter</h3>
+            <p2 class="text" id="text2">ID</p2>
+            <input class="filter_input" id="filter_name" name="filter_name">
+            <p3 class="text" id="text3">Tags</p3>
             <select class="filter_tag "id="filter_tag"></select>
-            <p4 class="text" id="text4">nach Ort</p4>
-            <select class="filter_location "id="filter_location"></select>
+            <br>
+            <button class="text" id="text4">Ort</button>
         </div>
         <div class="table_wrap" id="table_wrap" >
             <table class="table" id="table_main">
@@ -45,6 +45,8 @@
                 </tr>
             </table>
         </div>
+        </div>
+        </center>
     </body>
 
 </html>

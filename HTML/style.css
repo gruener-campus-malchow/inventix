@@ -13,6 +13,49 @@ body{
 	background-color: #43907d;
     */
 }
+
+table.table{
+    border-collapse: collapse;
+    border: 2px solid green;
+    bottom: 10px;
+    position: absolute;
+    height: calc(100% - 150px);
+}
+
+th.table_cell{
+    border: 1px solid black;
+}
+tr.table_row{
+    border: 1px solid black;
+}
+
+
+tr.table_header_row{
+    text-align: left;
+    border: 1px solid green;
+}
+
+div.filter_wrap{
+    position: fixed;
+    width: 20%;
+    padding-left: 5px;
+    border-right: 2px solid green;
+}
+div.table_wrap{
+    width: 70%;
+    margin-left: 20%;
+    margin-top: 50px;
+}
+input.filter_input{
+    width: 100%;
+}
+
+h3.header{
+    margin: 0px;
+    padding: 0px;
+    padding-bottom: 10px;
+}
+
 button.forward_button {
 	
     border-style: solid;
@@ -43,6 +86,8 @@ div.button_wrap{
     padding-top: 20px;
     border-top: 2px solid black;
     width: max-content;
+    padding-bottom: 20px;
+    border-bottom: 2px solid black;
 }
 
 div.mid_wrap{
