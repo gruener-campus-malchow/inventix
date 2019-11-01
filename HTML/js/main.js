@@ -28,31 +28,32 @@ function loadContentFromAPI(){
     disableLoadAnimation();
 };
 
-function loginUser (){
+async function loginUser (){
     enableLoadAnimation();
-    alert('wanna login');
+    //alert('wanna login');
     var username = document.getElementById('loginUserName').value;
     var password = document.getElementById('loginPassWord').value;
     
     const url = 'http://192.168.3.178:8000/login';
-    const data = {user: username, hash: password};
+    const data = {username: username, password: password};
     // fetch: https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/fetch
     try {
-        const response = fetch(url, {
+        const response = await fetch(url, {
             method: 'POST', // or 'PUT'
             body: JSON.stringify(data), // data can be `string` or {object}!
-            headers: {'Content-Type': 'application/json'},
+            //headers: {'Content-Type': 'application/json'},
             mode:'no-cors'
           });
           
           
-  const json = response.json();
-  console.log('Success:', JSON.stringify(json));
+  const json = await response;
+  console.log(json);
+  //console.log('Success:', JSON.stringify(json));
 } catch (error) {
   console.error('Error:', error);
 }
     
-    alert(username + ' ' + password);
+    //alert(username + ' ' + password);
     
 
 };
