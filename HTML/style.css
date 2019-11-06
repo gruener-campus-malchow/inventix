@@ -17,16 +17,35 @@ body{
 table.table{
     border-collapse: collapse;
     border: 2px solid green;
-    bottom: 10px;
+    /*bottom: 10px;
     position: absolute;
-    height: calc(100% - 150px);
+    height: calc(100% - 150px);*/
+	margin-top: -50px;
+}
+
+td.table_cell{
+    border: 1px solid green;
+}
+
+td.table_cell img{
+    width: 100%;
+	padding: 0px;
+	margin: 0px;
+	
+}
+td.img_cell{
+	width: 20%;
 }
 
 th.table_cell{
-    border: 1px solid black;
+    border: 1px solid green;
+	text-align: center;
+	font-size: 1.5vw;
+	height: 2.5vw;
 }
+
 tr.table_row{
-    border: 1px solid black;
+    border: 1px solid green;
 }
 
 
@@ -39,7 +58,9 @@ div.filter_wrap{
     position: fixed;
     width: 20%;
     padding-left: 5px;
-    border-right: 2px solid green;
+    border: 2px solid green;
+    border-left: none;
+    height: calc(100vh - 208px);
 }
 div.table_wrap{
     width: 70%;
@@ -54,6 +75,39 @@ h3.header{
     margin: 0px;
     padding: 0px;
     padding-bottom: 10px;
+}
+div.pic_wrap{
+	    width: 40%;
+    margin-top: 25px;
+        float: left;
+    /* padding-left: 20px; */
+    border: 2px solid green;
+	
+}
+div.left_wrap{
+	    margin-top: 50px;
+}
+
+table.details{
+	    border: 2px solid black;
+}
+
+table.details *{
+	text-align: left;
+}
+
+img{
+	width: 100%;
+}
+div.options_wrap{
+	margin-top: 30px;
+}
+
+
+div.file_wrap{
+	border-top: 1px solid black;
+    padding-bottom: 20px;
+    margin-top: 20px;
 }
 
 button.forward_button {
@@ -72,7 +126,29 @@ button.forward_button {
     text-overflow: ellipsis;
     transition: all 200ms ease-in-out 0s;
     white-space: nowrap;	
-    font-family: "Gotham Rounded A","Gotham Rounded B",Helvetica,Arial,sans-serif;
+    font-weight: 700;	
+    padding: 19px 39px 18px;
+    font-size: 18px;    
+    border-color: #3AC162;
+	background-color: #5FCF80;
+    width: 40%;	
+    margin-top: 10px;
+}
+button.option_button{
+	border-style: solid;
+    border-width: 0px 0px 3px;
+    box-shadow: 0 -1px 0 rgba(255, 255, 255, 0.1) inset;
+    color: #FFFFFF;	   
+    border-radius: 6px;
+    cursor: pointer;
+    display: inline-block;
+    font-style: normal;
+    overflow: hidden;
+    text-align: center;
+    text-decoration: none;
+    text-overflow: ellipsis;
+    transition: all 200ms ease-in-out 0s;
+    white-space: nowrap;
     font-weight: 700;	
     padding: 19px 39px 18px;
     font-size: 18px;    
@@ -91,12 +167,15 @@ div.button_wrap{
 }
 
 div.mid_wrap{
+	
+    height: fit-content;
   width: calc(100% - 20px);
     border: 1px solid black;
-    left: 10px;
-    top: 65px;
-    height: calc(100% - 76px);
-    position: absolute;
+        margin-top: 10px;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    /*height: calc(100% - 76px);
+    position: absolute;*/
 
 }
 
@@ -171,7 +250,7 @@ div.header{
 div.loginbereich{
 	width: 30%;
 	min-width: 200px;
-	border: 1px solid black;
+	border: 2px solid green;
     border-radius: 5px;
     text-align: center;
     background-color: white;
@@ -195,5 +274,8 @@ div.loginbereich p{
 p.info {
 	color: red;
 }
+
+
+
 
 
