@@ -5,6 +5,67 @@ body{
 	padding: 0px;
 	width: 100%;
 	height: 100%;
+}
+
+*{
+	font-family: 'Source Code Pro', monospace;
+}
+input.nameinput{
+	padding: 15px;
+    font-size: 100%;
+	width: 80%;
+    border: 2px solid green;
+	
+}
+button.targetvisible{
+	padding-bottom: 10px;
+    padding-top: 10px;
+    color: green;
+}
+button.untargetvisible{
+	opacity: 0.6;
+}
+
+table.additemtable{
+	width: 90%;
+	border-collapse: collapse;
+    margin-top: 50px;
+	text-align: left;
+}
+
+th.itemcells, td.itemcells{
+	height: 120px;
+    border-bottom: 1px solid #222;
+}
+
+label.nametag{
+	font-size: 140%;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+
+div.visiblenote{
+	margin-top: 30px;
+}
+div.ortnote{
+	    margin-top: 30px;
+}
+button.createitem{
+	    margin: 50px;
+    padding: 20px;
+    background-color: #58de58;
+    border: none;
+    font-weight: bold;
+}
+}
+body{
+	font-size: 1em;
+	font-family: 'Source Code Pro', monospace;
+	margin: 0px;
+	padding: 0px;
+	width: 100%;
+	height: 100%;
     /*
     background-image: url(logo_gcm.svg);
 	background-position: center;
@@ -215,6 +276,34 @@ button.option_button{
 	background-color: #5FCF80;
     width: 40%;	
     margin-top: 10px;
+}
+textarea.noteinput{
+    height: 80px;
+    width: 100%;
+}
+div.picture_wrap{
+    margin-left: -40%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: fit-content;
+
+}
+
+div.addnotes{
+    padding-top: 10px;
+    padding-bottom: 10px;
+       width: inherit;
+	
+}
+
+
+div.name_wrap{
+	margin-top: 20px;
+    margin-left: -40%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: fit-content;
+	
 }
 
 div.button_wrap{

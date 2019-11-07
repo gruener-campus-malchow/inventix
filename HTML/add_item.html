@@ -1,0 +1,74 @@
+
+<html>
+	<head>
+		<meta charset="utf-8"> 
+		<link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+		<link rel="stylesheet" type="text/css" href="font/source-code-pro.css" media="screen" />
+		<script src="more.js"></script>
+		<title>Inventix - </title>
+	</head>
+	<body>
+		<div class="header"> 
+				<input class="searchinput" type="text" id="searchquerry" placeholder="Was suchen Sie ? (Name, Id, Tags)"> 
+				<button class="searchbutton" > 🔍 </button>
+				<button id="benutzerbutton" class="benutzerbutton" > 👤 </button>
+				
+		</div>
+		<div id="userinfos" class="userinfos">
+			<div class="usermainfeld">
+				<div id="closeprofil" class="cross-rounded-borders"> </div>
+				<h1 class="profilheader">Dein Profil</h1>
+				
+				<table class="profildaten">
+					<tr class="profildata"><th class="profildata">Nutzername: </th><td class="profildata">Ein_Stein</td></tr>
+					<tr class="profildata"><th class="profildata">Vorname: </th><td class="profildata">M.</td></tr>
+					<tr class="profildata"><th class="profildata">Nachname: </th><td class="profildata">Kowski</td></tr>
+					<tr class="profildata"><th class="profildata">Schul-E-Mail: </th><td class="profildata">kowdxshfjbgi@gruener-campus-malchow.de</td></tr>
+					<tr class="profildata"><th class="profildata">Passwort: </th><td class="profildata">*************</td></tr>
+				</table>
+				<button style="opacity: 0.4;">Passwort ändern ?</button>
+				
+			</div>	
+		</div>
+		<center>
+		 <div class="mid_wrap" id="mid_wrap"> 
+            <div class="gcm_wrap" id="gcm_wrap" > 
+                <h1 class="header" id="header1">Gegenstand erstellen</h1>
+            </div>
+			
+			<table class="additemtable">
+			
+			<tr><th class="itemcells"><label class="nametag">Name eingeben:</label></th> <td class="itemcells"><input class="nameinput" id="table_input_name"></td></tr>
+			<tr><th class="itemcells"><label class="nametag">Bild Hinzufügen: </label></th> <td class="itemcells"><input name="datei" type="file" size="50" accept="image/*"></td></tr>
+			<tr><th class="itemcells"><label class="nametag">Beschreibung: </label></th> <td class="itemcells"><textarea maxlength="150" class="noteinput"></textarea></td></tr>
+			<tr><th class="itemcells"><label class="nametag">Tags: </label></th> <td class="itemcells">
+				<button>Mathematik</button>
+				<button>Giftig</button>
+				<button>Deutsch</button>
+				<button>Unnötig</button>
+				<button>Unbenutzt</button>
+				<button>Eingestaubt</button>
+				<button>Englisch</button>
+				<button>Unterricht</button>
+				<button>Freizeit</button>
+				<button>Experiment</button>
+			</td></tr>
+			<tr><th class="itemcells"><label class="nametag">Ort: </label></th> <td class="itemcells"><button class="button" id="button_loc_1">Ort hinzufügen</button></td></tr>
+			<tr><th class="itemcells"><label class="nametag">Sichtbarkeit: </label></th> <td class="itemcells"><p class="changevisible">
+					<button class="targetvisible">Soll der Gegenstand für <strong>jeden</strong> Nutzer*</button>
+					<br><strong>oder</strong><br>
+					<button class="untargetvisible">nur für <strong>Angemeldete</strong> Nutzer* ?</button>
+				</p></td></tr>
+			
+			
+			</table>
+			
+			<button class="createitem">Gegenstand hinzufügen</button>
+			
+			
+		</div>
+		</center>
+		
+    </body>
+
+</html>
