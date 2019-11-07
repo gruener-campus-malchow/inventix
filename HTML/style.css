@@ -31,8 +31,24 @@ td.table_cell img{
     width: 100%;
 	padding: 0px;
 	margin: 0px;
-	
 }
+
+
+th.profildata, td.profildata{
+	padding-top: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid gray;
+}
+h1.profilheader{
+	margin-left: 20px;
+}
+tr.profildata:hover{
+	background-color: #dcf5dd;
+}
+th.profildata{
+	padding-left: 10px;
+}
+
 td.img_cell{
 	width: 20%;
 }
@@ -55,6 +71,7 @@ tr.table_header_row{
 }
 
 div.filter_wrap{
+	z-index: -1;
 	background-color: #9cd697;
 	position: fixed;
     width: 20%;
@@ -64,6 +81,34 @@ div.filter_wrap{
   
     height: calc(100vh - 214px);
 }
+div.userinfos{
+    visibility: hidden;
+    width: 100%;
+    background-color: #00000054;
+    height: 100%;
+    position: fixed;
+    top: 0px;
+}
+table.profildaten{
+	border-collapse: collapse;
+	    margin: 10px;
+    border: 1px solid black;
+    padding: 10px;
+    width: calc(100% - 20px);
+    text-align: left;
+}
+div.usermainfeld{
+	padding: 0px;
+    margin: 0px;
+    position: fixed;
+    width: 60%;
+    height: 80%;
+    background-color: white;
+    left: 20%;
+    border: 2px solid green;
+    top: 10%;
+}
+
 div.table_wrap{
     width: 70%;
     margin-left: 20%;
@@ -200,7 +245,8 @@ h1.header{
     margin: 0px;
     padding: 0px;
     right: 6%;
-    position: relative;
+    
+    position: static;
 }
 h1.subheader{
    font-size: 250%;
@@ -208,7 +254,7 @@ h1.subheader{
     margin: 0px;
     padding: 0px;
     right: -8%;
-    position: relative;
+    position: static;
     width: min-content;
 }
 
@@ -291,6 +337,29 @@ p.info {
 }
 
 
+div.cross-rounded-borders{
+      background: #cc0000;
+    width: 33px;
+    height: 100px;
+    position: relative;
+    margin-left: 33px;
+    border-radius: 20px;
+    transform: scale(0.5) rotate(45deg);
+    position: fixed;
+    top: 7.8%;
+    right: 21%;
+	cursor: pointer
 
+}
+div.cross-rounded-borders:before{
+    background: #cc0000;
+    content: "";
+    width: 100px;
+    height: 33px;
+    position: absolute;
+    top: 33px;
+    left: -33px;
+    border-radius: 20px;
+} 
 
 
