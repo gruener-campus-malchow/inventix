@@ -240,21 +240,23 @@ div.mid_wrap{
 }
 
 h1.header{
+   z-index: -1;
+    margin-left: 10px;
     font-size: 5vw;
     height: fit-content;
     margin: 0px;
     padding: 0px;
     right: 6%;
-    
-    position: static;
+    position: relative;
 }
 h1.subheader{
+	z-index: -1;
    font-size: 250%;
     height: min-content;
     margin: 0px;
     padding: 0px;
     right: -8%;
-    position: static;
+    position: relative;
     width: min-content;
 }
 
