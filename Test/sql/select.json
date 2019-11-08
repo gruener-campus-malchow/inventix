@@ -7,11 +7,11 @@
     {"get_foto":"SELECT uri FROM foto WHERE ID=?"}
 
 {"comment3":"nutzer laden"}
-    {"get_user":"SELECT nickname,vorname,nachname,fachbereich_id FROM user WHERE ID=?"}
+    {"get_user":"SELECT nickname,vorname,nachname,fachbereich_id FROM nutzer WHERE ID=?"}
     {"get_faculty":"SELECT * FROM fachbereich WHERE ID=?"}
 
 {"comment4":"datei laden"}
-    {"get_file_ids":"SELECT datei_id FROM datei_gegenstand WHERE ID=?"}
+    {"get_file_ids":"SELECT datei_id FROM datei_gegenstand WHERE gegenstand_id=1"}
     {"get_file":"SELECT uri FROM datei WHERE ID=?"}
 
 {"comment5":"Ort eines  gegenstandes herausfinden"}
