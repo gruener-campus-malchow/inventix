@@ -1,3 +1,5 @@
+
+
 body{
 	font-size: 1em;
 	font-family: 'Source Code Pro', monospace;
@@ -76,6 +78,7 @@ body{
 }
 
 table.table{
+    font-size: 1.5vw;
     border-collapse: collapse;
     border: 2px solid green;
     /*bottom: 10px;
@@ -132,6 +135,7 @@ tr.table_header_row{
 }
 
 div.filter_wrap{
+    font-size: 1.5vw;
 	z-index: -1;
 	background-color: #9cd697;
 	position: fixed;
@@ -140,7 +144,7 @@ div.filter_wrap{
     border: 2px solid green;
     border-left: none;
   
-    height: calc(100vh - 214px);
+    /*height: calc(100vh - 214px);*/
 }
 div.userinfos{
     visibility: hidden;
@@ -339,8 +343,8 @@ h1.header{
     position: relative;
 }
 h1.subheader{
+    font-size: 5vw;
 	z-index: -1;
-   font-size: 250%;
     height: min-content;
     margin: 0px;
     padding: 0px;
@@ -453,4 +457,26 @@ div.cross-rounded-borders:before{
     border-radius: 20px;
 } 
 
+@media only screen and (max-width: 700px) { 
+     *.verschwindibus { 
+        display: none;
+    }
 
+    div.filter_wrap{
+        position: inherit;
+        width: 80%;
+        border: 2px solid green;
+        margin-bottom: 20px;
+    } 
+    div.table_wrap{
+        color: red;
+        width: 90%;
+        margin-left: 0px;
+        margin-top: 80px;
+    }  
+    textarea.noteinput{
+        height: -moz-available;
+        width: -moz-available;
+        }
+    
+}
