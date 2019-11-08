@@ -34,28 +34,22 @@ async function loginUser (){
     var username = document.getElementById('loginUserName').value;
     var password = document.getElementById('loginPassWord').value;
     
-    const url = 'http://192.168.3.178:8000/login';
+    const url = 'http://inventix:8000/login';
     const data = {username: username, password: password};
     // fetch: https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/fetch
     try {
         const response = await fetch(url, {
             method: 'POST', // or 'PUT'
-            body: JSON.stringify(data), // data can be `string` or {object}!
+            body: JSON.stringify(data) // data can be `string` or {object}!
             //headers: {'Content-Type': 'application/json'},
-            mode:'no-cors'
+            //mode:'no-cors'
           });
-          
-          
-  const json = await response;
-  console.log(json);
-  //console.log('Success:', JSON.stringify(json));
-} catch (error) {
-  console.error('Error:', error);
-}
-    
-    //alert(username + ' ' + password);
-    
-
+        const json = await response;
+        //console.log(json);
+        console.log('Success:', JSON.stringify(json));
+    } catch (error) {
+        console.error('Error:', error);
+    }    
 };
 
 //document.addEventListener('load',enableLoadAnimation);
