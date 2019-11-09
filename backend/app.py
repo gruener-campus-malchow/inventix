@@ -1,23 +1,48 @@
-from sanic import Sanic, response
-from sanic_cors import CORS
+import sqlite3
 
-app = Sanic()
-CORS(app)
+from fastapi import FastAPI
+from pydantic import BaseModel
+from starlette.middleware.cors import CORSMiddleware
 
 
-@app.route("/login", methods=["POST"])
-async def login(request):
-    print(request.args)
-    if request.json["username"] == "testuser" and request.json["password"] == "password":
-        return response.json({"logged_in": True})
+class Login(BaseModel):
+    username: str
+    password: str
+
+
+app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+db = sqlite3.connect("../sql/inventix.db")
+db.row_factory = sqlite3.Row
+c = db.cursor()
+
+
+@app.post("/login")
+async def login(login: Login):
+    if login.username == "testuser" and login.password == "password":
+        return {"logged_in": True}
     else:
-        return response.json({"logged_in": False})
+        return {"logged_in": False}
 
 
-@app.route("/items")
-async def items(request):
-    pass
+@app.get("/searchItems")
+async def search_items(name: str = "", notes: str = ""):
+    print(repr(name))
+    c.execute(
+        """SELECT * FROM gegenstand WHERE name LIKE ? AND notes LIKE ? AND visible = TRUE""",
+        ("%" + name + "%", "%" + notes + "%",),
+    )
+    raw_items = c.fetchall()
+    items = []
+    for item in raw_items:
+        items.append({"id": item["id"], "name": item["name"], "notes": item["notes"]})
 
-
-if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=8000, debug=True)
+    return items
