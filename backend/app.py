@@ -37,7 +37,7 @@ async def login(login: Login):
 async def search_items(name: str = "", notes: str = ""):
     print(repr(name))
     c.execute(
-        """SELECT * FROM gegenstand WHERE name LIKE ? AND notes LIKE ? AND visible = TRUE""",
+        """SELECT * FROM gegenstand WHERE name LIKE ? AND notes LIKE ? AND visible = 1""",
         ("%" + name + "%", "%" + notes + "%",),
     )
     raw_items = c.fetchall()
