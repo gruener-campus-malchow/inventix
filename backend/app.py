@@ -46,3 +46,9 @@ async def search_items(name: str = "", notes: str = ""):
         items.append({"id": item["id"], "name": item["name"], "notes": item["notes"]})
 
     return items
+
+
+@app.get("/getItem/{item_id}")
+async def get_item(item_id: int):
+    c.execute("""SELECT * FROM gegenstand WHERE id = ?""", (item_id,))
+    return c.fetchone()
