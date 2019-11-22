@@ -1,23 +1,56 @@
-
 <html>
 	<head>
 		<meta charset="utf-8"> 
-		<script src="./js/main.js"></script>
 		<link rel="stylesheet" type="text/css" href="style.css" media="screen" />
-		title>Schul-Lagersystem</title>
+		<link rel="stylesheet" type="text/css" href="font/source-code-pro.css" media="screen" />
+		<script src="more.js" > </script>
+		<title>Inventix - Hauptseite</title>
 	</head>
-	<body>
-		<div class="header"> 
-				<input class="searchinput" type="text" id="searchquerry" placeholder="Was suchen Sie ?"> 
+    <body>
+       <div class="header"> 
+				<input class="searchinput" type="text" id="searchquerry" placeholder="Was suchen Sie ? (Name, Id, Tags)"> 
 				<button class="searchbutton" > 🔍 </button>
+				<button id="benutzerbutton" class="benutzerbutton" > 👤 </button>
 				
-				<button class="benutzerbutton" > 👤 </button>
 		</div>
-		
-	
-		
-		
-		
-	</body>
+		<div id="userinfos" class="userinfos">
+			<div class="usermainfeld">
+				<div id="closeprofil" class="cross-rounded-borders"> </div>
+				<h1 class="profilheader">Dein Profil</h1>
+				
+				<table class="profildaten">
+					<tr class="profildata"><th class="profildata">Nutzername: </th><td class="profildata">Ein_Stein</td></tr>
+					<tr class="profildata"><th class="profildata">Vorname: </th><td class="profildata">M.</td></tr>
+					<tr class="profildata"><th class="profildata">Nachname: </th><td class="profildata">Kowski</td></tr>
+					<tr class="profildata"><th class="profildata">Schul-E-Mail: </th><td class="profildata">kowdxshfjbgi@gruener-campus-malchow.de</td></tr>
+					<tr class="profildata"><th class="profildata">Passwort: </th><td class="profildata">*************</td></tr>
+				</table>
+				<button style="opacity: 0.4;">Passwort ändern ?</button>
+				
+			</div>	
+		</div>
+
+        <center>
+            <div class="mid_wrap" id="mid_wrap"> 
+                <div class="gcm_wrap" id="gcm_wrap" > 
+                    <h1 class="header" id="header1">GCM</h1>
+                    <h1 class="subheader" id="subheader1">Inventix</h1>
+                </div>
+                <div class="welc_wrap" id="welc_wrap" > 
+                    <br>
+                    <p class="text" id="text"> Hallo Müller! Willkommen im Inventix</p>
+                </div>
+                <br><br><br>
+                <div class="button_wrap" id="button_wrap" > 
+                    <button class="forward_button" id="forward_button_1"> Inventar auflisten </button>         
+                    <button class="forward_button" id="forward_button_3"> Gegenstand erstellen </button>            
+                    <button class="forward_button" id="forward_button_4"> Dateien hinzufügen </button>            
+                </div>
+            </div>
+            
+        </center>
+
+
+</body>
 
 </html>

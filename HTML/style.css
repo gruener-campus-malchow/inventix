@@ -1,3 +1,5 @@
+
+
 body{
 	font-size: 1em;
 	font-family: 'Source Code Pro', monospace;
@@ -5,9 +7,358 @@ body{
 	padding: 0px;
 	width: 100%;
 	height: 100%;
-	/*background-color: #43907d;*/
+	min-width: 600px;
 }
 
+*{
+	font-family: 'Source Code Pro', monospace;
+}
+input.nameinput{
+	padding: 15px;
+    font-size: 100%;
+	width: 80%;
+    border: 2px solid green;
+	
+}
+button.targetvisible{
+	padding-bottom: 10px;
+    padding-top: 10px;
+    color: green;
+}
+button.untargetvisible{
+	opacity: 0.6;
+}
+
+table.additemtable{
+	width: 90%;
+	border-collapse: collapse;
+    margin-top: 50px;
+	text-align: left;
+}
+
+th.itemcells, td.itemcells{
+	height: 120px;
+    border-bottom: 1px solid #222;
+}
+
+label.nametag{
+	font-size: 140%;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+
+div.visiblenote{
+	margin-top: 30px;
+}
+div.ortnote{
+	    margin-top: 30px;
+}
+button.createitem{
+	    margin: 50px;
+    padding: 20px;
+    background-color: #58de58;
+    border: none;
+    font-weight: bold;
+}
+}
+body{
+	font-size: 1em;
+	font-family: 'Source Code Pro', monospace;
+	margin: 0px;
+	padding: 0px;
+	width: 100%;
+	height: 100%;
+    /*
+    background-image: url(logo_gcm.svg);
+	background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+	background-color: #43907d;
+    */
+}
+
+table.table{
+    font-size: 1.5vw;
+    border-collapse: collapse;
+    border: 2px solid green;
+    /*bottom: 10px;
+    position: absolute;
+    height: calc(100% - 150px);*/
+	margin-top: -50px;
+}
+
+td.table_cell{
+    border: 1px solid green;
+}
+
+td.table_cell img{
+    width: 100%;
+	padding: 0px;
+	margin: 0px;
+}
+
+
+th.profildata, td.profildata{
+	padding-top: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid gray;
+}
+h1.profilheader{
+	margin-left: 20px;
+}
+tr.profildata:hover{
+	background-color: #dcf5dd;
+}
+th.profildata{
+	padding-left: 10px;
+}
+
+td.img_cell{
+	width: 20%;
+}
+
+th.table_cell{
+    border: 1px solid green;
+	text-align: center;
+	font-size: 1.5vw;
+	height: 2.5vw;
+}
+
+tr.table_row{
+    border: 1px solid green;
+}
+
+
+tr.table_header_row{
+    text-align: left;
+    border: 1px solid green;
+}
+
+div.filter_wrap{
+    font-size: 1.5vw;
+	z-index: -1;
+	background-color: #9cd697;
+	position: fixed;
+    width: 20%;
+    padding-left: 5px;
+    border: 2px solid green;
+    border-left: none;
+  
+    /*height: calc(100vh - 214px);*/
+}
+div.userinfos{
+    visibility: hidden;
+    width: 100%;
+    background-color: #00000054;
+    height: 100%;
+    position: fixed;
+    top: 0px;
+}
+table.profildaten{
+	border-collapse: collapse;
+	    margin: 10px;
+    border: 1px solid black;
+    padding: 10px;
+    width: calc(100% - 20px);
+    text-align: left;
+}
+div.usermainfeld{
+	padding: 0px;
+    margin: 0px;
+    position: fixed;
+    width: 60%;
+    height: 80%;
+    background-color: white;
+    left: 20%;
+    border: 2px solid green;
+    top: 10%;
+}
+
+div.table_wrap{
+    width: 70%;
+    margin-left: 20%;
+    margin-top: 50px;
+}
+input.filter_input{
+    width: 100%;
+}
+
+p.addedfiles{
+	font-size: 250%;
+    padding: 0px;
+    margin: 0px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    border-top: 2px solid green;
+    border-bottom: 2px solid green;
+    width: fit-content;
+    padding-top: 5px;
+    padding-bottom: 5px;	
+}
+
+p.text{
+	font-size: 185%;
+}
+
+
+h3.header{
+    margin: 0px;
+    padding: 0px;
+    padding-bottom: 10px;
+}
+div.pic_wrap{
+	width: 40%;
+    float: left;
+    margin-left: 10px;
+    border: 2px solid green;
+	
+}
+div.left_wrap{
+	margin-top: 50px;
+}
+
+table.details{
+	background-color: #efefef;
+	border: 2px solid black;
+}
+
+table.details *{
+	text-align: left;
+}
+
+img{
+	width: 100%;
+}
+div.options_wrap{
+	margin-top: 30px;
+}
+
+
+div.file_wrap{
+	border-top: 1px solid black;
+    padding-bottom: 20px;
+    margin-top: 20px;
+}
+
+button.forward_button {
+	
+    border-style: solid;
+    border-width: 0px 0px 3px;
+    box-shadow: 0 -1px 0 rgba(255, 255, 255, 0.1) inset;
+    color: #FFFFFF;	   
+    border-radius: 6px;
+    cursor: pointer;
+    display: inline-block;
+    font-style: normal;
+    overflow: hidden;
+    text-align: center;
+    text-decoration: none;
+    text-overflow: ellipsis;
+    transition: all 200ms ease-in-out 0s;
+    white-space: nowrap;	
+    font-weight: 700;	
+    padding: 19px 39px 18px;
+      font-size: 1.5vw; 
+    border-color: #3AC162;
+	background-color: #5FCF80;
+    width: 40%;	
+    margin-top: 10px;
+}
+button.option_button{
+	border-style: solid;
+    border-width: 0px 0px 3px;
+    box-shadow: 0 -1px 0 rgba(255, 255, 255, 0.1) inset;
+    color: #FFFFFF;	   
+    border-radius: 6px;
+    cursor: pointer;
+    display: inline-block;
+    font-style: normal;
+    overflow: hidden;
+    text-align: center;
+    text-decoration: none;
+    text-overflow: ellipsis;
+    transition: all 200ms ease-in-out 0s;
+    white-space: nowrap;
+    font-weight: 700;	
+    padding: 19px 39px 18px;
+    font-size: 1.5vw;   
+    border-color: #3AC162;
+	background-color: #5FCF80;
+    width: 40%;	
+    margin-top: 10px;
+}
+textarea.noteinput{
+    height: 80px;
+    width: 100%;
+}
+div.picture_wrap{
+    margin-left: -40%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: fit-content;
+
+}
+
+div.addnotes{
+    padding-top: 10px;
+    padding-bottom: 10px;
+       width: inherit;
+	
+}
+
+
+div.name_wrap{
+	margin-top: 20px;
+    margin-left: -40%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: fit-content;
+	
+}
+
+div.button_wrap{
+    padding-top: 20px;
+    border-top: 2px solid black;
+       width: 90%;
+    padding-bottom: 20px;
+    border-bottom: 2px solid black;
+}
+
+div.mid_wrap{
+	
+    min-height: 100%;
+    height: fit-content;
+  width: calc(100% - 20px);
+    border: 1px solid black;
+        margin-top: 10px;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    /*height: calc(100% - 76px);
+    position: absolute;*/
+
+}
+
+h1.header{
+   z-index: -1;
+    margin-left: 10px;
+    font-size: 5vw;
+    height: fit-content;
+    margin: 0px;
+    padding: 0px;
+    right: 6%;
+    position: relative;
+}
+h1.subheader{
+    font-size: 5vw;
+	z-index: -1;
+    height: min-content;
+    margin: 0px;
+    padding: 0px;
+    right: -8%;
+    position: relative;
+    width: min-content;
+}
 
 button.seitenbutton{
 	background-color: unset;
@@ -54,5 +405,160 @@ div.header{
 	position: relative;
 	width: 100%;
 	height: 50px;
-    background-color: #063e0c;
+    background-color: #36804B;
 }
+
+
+
+div.loginbereich{
+	width: 30%;
+	min-width: 200px;
+	border: 2px solid green;
+    border-radius: 5px;
+    text-align: center;
+    background-color: white;
+	 /*height: 150px;*/
+}
+h1.topname {
+	font-size: 34px;
+}
+
+
+div.loginbereich input{
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+div.loginbereich p{
+    margin: 0px;
+    margin-top: 8px;
+}
+
+p.info {
+	color: red;
+}
+
+
+div.cross-rounded-borders{
+      background: #cc0000;
+    width: 33px;
+    height: 100px;
+    position: relative;
+    margin-left: 33px;
+    border-radius: 20px;
+    transform: scale(0.5) rotate(45deg);
+    position: fixed;
+    top: 7.8%;
+    right: 21%;
+	cursor: pointer
+
+}
+div.cross-rounded-borders:before{
+    background: #cc0000;
+    content: "";
+    width: 100px;
+    height: 33px;
+    position: absolute;
+    top: 33px;
+    left: -33px;
+    border-radius: 20px;
+} 
+
+@media only screen and (max-device-width: 800px) { 
+     *.verschwindibus { 
+        display: none;
+    }
+
+    div.filter_wrap{
+        position: inherit;
+        width: 80%;
+        border: 2px solid green;
+        margin-bottom: 20px;
+    } 
+    div.table_wrap{
+        color: red;
+        width: 90%;
+        margin-left: 0px;
+        margin-top: 80px;
+    }  
+    textarea.noteinput{
+        height: -moz-available;
+        width: -moz-available;
+    }
+    
+	button.forward_button {
+		
+	}
+	
+	
+	div.pic_wrap{
+		width: 80%;
+		left: 10%;
+		float: none;
+	}
+	button.option_button {
+		width: 60%;
+		height: 100px;
+		font-size: 150%;
+	}
+
+	table.details {
+		width: 80%;
+		height: 200px;
+		font-size: 180%;
+	}
+	
+	button.forward_button {
+		width: 90%;
+		height: 150px;
+		font-size: 250%;
+	}
+	
+	
+	div.loginbereich{
+		width: 90%;
+		height: fit-content;
+	}
+	div.loginbereich input{
+		width: 60%;
+		height: 60px;
+		font-size: 170%;
+	}
+	div.loginbereich p{
+		font-size: 200%;
+	}
+	div.loginbereich button{
+		width: 20%;
+		height: 60px;
+		margin-top: 20px;
+		min-width: fit-content;
+		font-size: 150%;
+		
+	}
+
+	td.table_cell{
+		font-size: 150%;
+
+	}
+	th.table_cell{
+		font-size: 150%
+	}
+	
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
