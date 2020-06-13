@@ -28,10 +28,10 @@ Ein Inventursystem für den Grünen Campus Malchow
 		* FachbereichItem(id, Item_id, Fb-id)
 		* TagItem(id, Item_id, Tag_id)
 		* Tag(id, tag)
-		* Position(id, Gebäude_id, Ort_id, kurzbezeichnung)
+		* Position(id, Ort_id, Raum_id, kurzbezeichnung)
 		* Foto(id, uri)
-		* Gebäude(id, gebäudename) 	--> _FG1, FG2, TH FG2, ..._
-		* Ort(id, name) 		--> _Garage 1, 3.202, 1.101 ..._
+		* Ort(id, gebäudename) 	--> _FG1, FG2, TH FG2, ..._
+		* Raum(id, name) 		--> _Garage 1, 3.202, 1.101, ..._
 
 
 
