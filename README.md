@@ -18,7 +18,12 @@ Ein Inventursystem für den grünen Campus Malchow
 	* search Item with Name(and more)
 	* list all Items
 	* add Item with configuration
-
+* Register of New Users (Teachers only)
+* Login for registered Users
+* Database for
+	* Users
+	* Items
+	* Places
 
 
 
