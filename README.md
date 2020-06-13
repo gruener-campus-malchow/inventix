@@ -1,9 +1,9 @@
 # Inventix
 
-Ein Inventursystem für den grünen Campus Malchow
+Ein Inventursystem für den Grünen Campus Malchow
 
 
-## ToDo-Liste ##
+## ToDo-List ##
 	
 ### Frontend: ###
 * create header
@@ -36,4 +36,4 @@ Ein Inventursystem für den grünen Campus Malchow
 ##    Planned ##
 ## o: In progress ##
 ## ◎: Complete and untested ##
-## ✔: Complete and tested ##
+## ✔  : Complete and tested ##
