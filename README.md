@@ -24,7 +24,9 @@ Ein Inventursystem für den Grünen Campus Malchow
 	* Users(id, vorname, nachname, mail, pwhash)
 		* Fachbereich(id, longname, shortname)
 		* FachbereichUser(id, Users_id, fb-name)
-	* Items(id, name, notiz, visible_with_no_login, position_id, Users_id, Foto_id)
+	* Items(id, name, notiz, visible_with_no_login, position_id, Users_id, Foto_id, Fachbereich_id)
+		* TagItem(id, Item_id, Tag_id)
+		* Tag(id, tag)
 		* Position(id, Gebäude_id, Ort_id, kurzbezeichnung)
 		* Foto(id, uri)
 		* Gebäude(id, gebäudename) 	--> _FG1, FG2, TH FG2, ..._
