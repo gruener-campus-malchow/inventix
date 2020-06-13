@@ -23,8 +23,9 @@ Ein Inventursystem für den Grünen Campus Malchow
 * Database for
 	* Users(id, vorname, nachname, mail, pwhash)
 		* Fachbereich(id, longname, shortname)
-		* FachbereichUser(id, Users_id, fb-name)
-	* Items(id, name, notiz, visible_with_no_login, position_id, Users_id, Foto_id, Fachbereich_id)
+		* FachbereichUser(id, Users_id, Fb-id)
+	* Items(id, name, notiz, visible_with_no_login, position_id, Users_id, Foto_id)
+		* FachbereichItem(id, Item_id, Fb-id)
 		* TagItem(id, Item_id, Tag_id)
 		* Tag(id, tag)
 		* Position(id, Gebäude_id, Ort_id, kurzbezeichnung)
