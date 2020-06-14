@@ -32,8 +32,8 @@ Ein Inventursystem für den Grünen Campus Malchow
 		* Foto(id, uri)
 		* Ort(id, name) 	--> _FG1, FG2, TH FG2, ..._
 		* Raum(id, name) 		--> _Garage 1, 3.202, 1.101, ..._
-
-
+#### Database ####
+	* getNutzer(id) -> {id,vorname,nachname,mail,[Fachbereiche]}
 
 
 
