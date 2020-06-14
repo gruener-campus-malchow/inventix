@@ -34,7 +34,7 @@ Ein Inventursystem für den Grünen Campus Malchow
 		* Raum(id, name) 		--> _Garage 1, 3.202, 1.101, ..._
 #### Database-Functions: ####
 	* getNutzer(id) -> {id,vorname,nachname,mail,[fachbereiche]}
-	* getAllItems(visible_with_no_login=False) -> [{id,name,notiz,position_id,Foto_id},...]
+	* getAllItems(visible_with_no_login=False) -> [{id,name,notiz,position_id,Foto_id,[fachbereiche],[tags]},...]
 	* getItemInfo(id) -> {id,name,notiz,visible_with_no_login,position_id,nutzer_id,foto_id,[fachbereiche],[tags]}
 	* getPositionInfo(position_id) -> {id,Ort_name,Raum_name,kurzbezeichnung}
 
