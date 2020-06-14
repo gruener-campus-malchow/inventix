@@ -35,10 +35,15 @@ Ein Inventursystem für den Grünen Campus Malchow
 #### Database-Functions: ####
 	* getAllNutzer() -> [{id,vorname,nachname,mail,[fachbereiche]},...]
 	* getNutzerInfo(nutzer_id) -> {id,vorname,nachname,mail,[fachbereiche]}
-	* getAllItems(visible_with_no_login=False) -> [{id,name,notiz,visible_with_no_login,position_id,foto_id,[fachbereiche],[tags]},...]
+	* getNutzerID(mail) -> nutzer_id
+	* checkPWHash(mail,pwhash) -> True|False
+	* getAllItems(visible_with_no_login=False) -> [{id,name,notiz,visible_with_no_login,position_id,nutzer_id,foto_id,[fachbereiche],[tags]},...]
 	* getItemInfo(item_id) -> {id,name,notiz,visible_with_no_login,position_id,nutzer_id,foto_id,[fachbereiche],[tags]}
 	* getPositionInfo(position_id) -> {id,ort_name,raum_name,kurzbezeichnung}
-
+	* getAllTags() -> [tag,...]
+	* getAllFachbereiche() -> [fachbereich,...]
+	* getAllOrte() -> [ort,...]
+	* getAllRaume() -> [raum,...]
 
 
 
