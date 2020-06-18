@@ -142,6 +142,13 @@ class db:
 		for a in selection:
 			result.append(a[0])
 		return result
+		
+	def getAllFotos(self):
+		selection = self.select("SELECT uri FROM Fotos")
+		result = []
+		for a in selection:
+			result.append(a[0])
+		return result
 			
 	def getAllFachbereiche(self):
 		selection = self.select("SELECT * FROM Fachbereiche")
@@ -199,8 +206,64 @@ class db:
 				return {"success": True,"id":tagid}
 				
 		return {"success": False,"id":-1}
+		
+	def addFoto(self,uri):
+		select = self.select("SELECT * FROM Fotos WHERE uri == '"+str(uri)+"'")
+		if(len(select) == 0):
+			self.executeIn("INSERT INTO Fotos(uri) VALUES(?)",(uri,))
+			
+			fotoid = self.select("SELECT id FROM Fotos WHERE uri == '"+str(uri)+"'")
+			if(len(fotoid) == 1):
+				fotoid = fotoid[0]
+				return {"success": True,"id":fotoid}
+		return {"success": False,"id":-1}
+
+	def addOrt(self,name):
+		select = self.select("SELECT * FROM Ort WHERE name == '"+str(name)+"'")
+		if(len(select) == 0):
+			self.executeIn("INSERT INTO Ort(name) VALUES(?)",(name,))
+			
+			fotoid = self.select("SELECT id FROM Ort WHERE name == '"+str(name)+"'")
+			if(len(fotoid) == 1):
+				fotoid = fotoid[0]
+				return {"success": True,"id":fotoid}				
+		return {"success": False,"id":-1}
+
+	def addRaum(self,name):
+		select = self.select("SELECT * FROM Raum WHERE name == '"+str(name)+"'")
+		if(len(select) == 0):
+			self.executeIn("INSERT INTO Raum(name) VALUES(?)",(name,))
+			
+			fotoid = self.select("SELECT id FROM Raum WHERE name == '"+str(name)+"'")
+			if(len(fotoid) == 1):
+				fotoid = fotoid[0]
+				return {"success": True,"id":fotoid}				
+		return {"success": False,"id":-1}
 	
+	def addPosition(self,ortid,raumid,kurzbezeichnung):
+		#select = self.select("SELECT * FROM Position WHERE Ort_id == '"+str(ortid)+"' AND Raum_id == '"+str(raumid)+"' AND kurzbezeichnung == '"+str(kurzbezeichnung)+"'")
+		#if(len(select) == 0):
+		self.executeIn("INSERT INTO Position(Ort_id,Raum_id,kurzbezeichnung) VALUES(?,?,?)",(ortid,raumid,kurzbezeichnung))
+		
+		fotoid = self.select("SELECT id FROM Position WHERE Ort_id == '"+str(ortid)+"' AND Raum_id == '"+str(raumid)+"' AND kurzbezeichnung == '"+str(kurzbezeichnung)+"'")
+		if(len(fotoid) == 1):
+			fotoid = fotoid[0]
+			return {"success": True,"id":fotoid}	
+		return {"success": False,"id":-1}
 	
+	def addItem(self,name,notiz,visible_with_no_login,position_id,nutzer_id,fotos_id):
+		select = self.select("SELECT * FROM Items WHERE Position_id == '"+str(position_id)+"'")
+		if(len(select) == 0):
+			self.executeIn("INSERT INTO Items(name,notiz,visible_with_no_login,Position_id,Nutzer_id,Fotos_id) VALUES(?,?,?,?,?,?)",(name,notiz,visible_with_no_login,position_id,nutzer_id,fotos_id))
+			
+			nutzerid = self.select("SELECT id FROM Items WHERE Position_id == '"+str(position_id)+"'")
+			if(len(nutzerid) == 1):
+				nutzerid = nutzerid[0]
+				return {"success": True,"id":nutzerid}
+				
+		return {"success": False,"id":-1}
+		
+		
 		
 def stringHelper(statement, wahr, falsch):
 	if(statement):
