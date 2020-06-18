@@ -33,18 +33,22 @@ Ein Inventursystem für den Grünen Campus Malchow
 		* Ort(id, name) 	--> _FG1, FG2, TH FG2, ..._									◎
 		* Raum(id, name) 		--> _Garage 1, 3.202, 1.101, ..._						◎
 #### Database-Functions: ####
-	* getAllNutzer() -> [{id,vorname,nachname,mail,[fachbereiche]},...]
-	* getNutzerInfo(nutzer_id) -> {id,vorname,nachname,mail,[fachbereiche]}
-	* getNutzerID(mail) -> nutzer_id
-	* checkPWHash(mail,pwhash) -> True|False
-	* getAllItems(visible_with_no_login=False) -> [{id,name,notiz,visible_with_no_login,position_id,nutzer_id,foto_id,[fachbereiche],[tags]},...]
+	* getNutzerInfo(nutzer_id) -> {id,vorname,nachname,mail,[fachbereiche]} ✔
+	* getNutzerID(mail) -> nutzer_id ✔ 
+	* checkPWHash(mail,pwhash) -> True|False ✔
 	* getItemInfo(item_id) -> {id,name,notiz,visible_with_no_login,position_id,nutzer_id,foto_id,[fachbereiche],[tags]}
 	* getPositionInfo(position_id) -> {id,ort_name,raum_name,kurzbezeichnung}
-	* getAllTags() -> [tag,...]
-	* getAllFachbereiche() -> [fachbereich,...]
+	* getAllItems(ignore_visible=False) -> [{id,name,notiz,visible_with_no_login,position_id,nutzer_id,foto_id,[fachbereiche],[tags]},...]
+	* getAllNutzer() -> [{id,vorname,nachname,mail,[fachbereiche]},...] ✔
+	* getAllTags() -> [tag,...] ✔ 
+	* getAllFachbereiche() -> [[id,longname,shortname],...] ✔ 
 	* getAllOrte() -> [ort,...]
 	* getAllRaume() -> [raum,...]
-
+	---
+	* addNutzer(vorname,nachname,mail,pwhash) -> {"success":True|False,id} ✔
+	* addFachbereich(longname,shortname) -> {"success":True|False,id} ✔
+	* addFachbereichToNutzer(nutzer_id, fachbereich_id) -> {"success":True|False} ✔
+	* addTag(name) -> {"success":True|False,id} ✔
 
 
 
