@@ -43,7 +43,6 @@ class db:
 	def _getFachbereicheFromNutzer(self,nutzer_id):
 		select = self.select("SELECT Fachbereich_id FROM FachbereichNutzer WHERE Nutzer_id == '"+str(nutzer_id)+"'")
 		fbs = []
-		print(select)
 		if(len(select) > 0):
 			for a in select:
 				fb = self.select("SELECT * FROM Fachbereiche WHERE id == '"+str(a[0])+"'")
@@ -156,11 +155,17 @@ class db:
 		
 	def getAllOrte(self):
 		selection = self.select("SELECT name FROM Ort")
-		return selection
+		result = []
+		for a in selection:
+			result.append(a[0])
+		return result
 		
 	def getAllRaume(self):
 		selection = self.select("SELECT name FROM Raum")
-		return selection
+		result = []
+		for a in selection:
+			result.append(a[0])
+		return result
 		
 	def addNutzer(self,vorname,nachname,mail,pwhash):
 		select = self.select("SELECT * FROM Nutzer WHERE mail == '"+str(mail)+"'")
@@ -170,7 +175,7 @@ class db:
 			nutzerid = self.select("SELECT id FROM Nutzer WHERE mail == '"+str(mail)+"'")
 			if(len(nutzerid) == 1):
 				nutzerid = nutzerid[0]
-				return {"success": True,"id":nutzerid}
+				return {"success": True,"id":nutzerid[0]}
 				
 		return {"success": False,"id":-1}
 	
@@ -203,7 +208,7 @@ class db:
 			tagid = self.select("SELECT id FROM Tags WHERE tag == '"+str(name)+"'")
 			if(len(tagid) == 1):
 				tagid = tagid[0]
-				return {"success": True,"id":tagid}
+				return {"success": True,"id":tagid[0]}
 				
 		return {"success": False,"id":-1}
 		
@@ -215,7 +220,7 @@ class db:
 			fotoid = self.select("SELECT id FROM Fotos WHERE uri == '"+str(uri)+"'")
 			if(len(fotoid) == 1):
 				fotoid = fotoid[0]
-				return {"success": True,"id":fotoid}
+				return {"success": True,"id":fotoid[0]}
 		return {"success": False,"id":-1}
 
 	def addOrt(self,name):
@@ -223,10 +228,10 @@ class db:
 		if(len(select) == 0):
 			self.executeIn("INSERT INTO Ort(name) VALUES(?)",(name,))
 			
-			fotoid = self.select("SELECT id FROM Ort WHERE name == '"+str(name)+"'")
-			if(len(fotoid) == 1):
-				fotoid = fotoid[0]
-				return {"success": True,"id":fotoid}				
+			ortid = self.select("SELECT id FROM Ort WHERE name == '"+str(name)+"'")
+			if(len(ortid) == 1):
+				ortid = ortid[0]
+				return {"success": True,"id":ortid[0]}				
 		return {"success": False,"id":-1}
 
 	def addRaum(self,name):
@@ -234,10 +239,10 @@ class db:
 		if(len(select) == 0):
 			self.executeIn("INSERT INTO Raum(name) VALUES(?)",(name,))
 			
-			fotoid = self.select("SELECT id FROM Raum WHERE name == '"+str(name)+"'")
-			if(len(fotoid) == 1):
-				fotoid = fotoid[0]
-				return {"success": True,"id":fotoid}				
+			raumid = self.select("SELECT id FROM Raum WHERE name == '"+str(name)+"'")
+			if(len(raumid) == 1):
+				raumid = raumid[0]
+				return {"success": True,"id":raumid[0]}				
 		return {"success": False,"id":-1}
 	
 	def addPosition(self,ortid,raumid,kurzbezeichnung):

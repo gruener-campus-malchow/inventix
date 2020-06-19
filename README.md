@@ -31,7 +31,7 @@ Ein Inventursystem für den Grünen Campus Malchow
 		* Position(id, Ort_id, Raum_id, kurzbezeichnung) 								◎
 		* Foto(id, uri)																	◎
 		* Ort(id, name) 	--> _FG1, FG2, TH FG2, ..._									◎
-		* Raum(id, name) 		--> _Garage 1, 3.202, 1.101, ..._						◎
+		* Raum(id, name) 		--> _Garage 1, 202, 101, ..._							◎
 #### Database-Functions: ####
 	* getNutzerInfo(nutzer_id) -> {id,vorname,nachname,mail,[fachbereiche]} ✔
 	* getNutzerID(mail) -> nutzer_id ✔ 
@@ -41,18 +41,18 @@ Ein Inventursystem für den Grünen Campus Malchow
 	* getAllItems(ignore_visible=False) -> [{id,name,notiz,visible_with_no_login,position_id,nutzer_id,foto_id,[fachbereiche],[tags]},...]
 	* getAllNutzer() -> [{id,vorname,nachname,mail,[fachbereiche]},...] ✔
 	* getAllTags() -> [tag,...] ✔ 
-	* getAllFotos() -> [uri,...]
+	* getAllFotos() -> [uri,...] ✔ 
 	* getAllFachbereiche() -> [[id,longname,shortname],...] ✔ 
-	* getAllOrte() -> [ort,...]
-	* getAllRaume() -> [raum,...]
+	* getAllOrte() -> [ort,...] ✔
+	* getAllRaume() -> [raum,...] ✔
 	---
 	* addNutzer(vorname,nachname,mail,pwhash) -> {"success":True|False,id} ✔
 	* addFachbereich(longname,shortname) -> {"success":True|False,id} ✔
 	* addFachbereichToNutzer(nutzer_id, fachbereich_id) -> {"success":True|False} ✔
 	* addTag(name) -> {"success":True|False,id} ✔
-	* addFoto(uri) -> {"success":True|False,id}
-	* addOrt(name) -> {"success":True|False,id}
-	* addRaum(name) -> {"success":True|False,id}
+	* addFoto(uri) -> {"success":True|False,id} ✔
+	* addOrt(name) -> {"success":True|False,id} ✔
+	* addRaum(name) -> {"success":True|False,id} ✔
 	* addPosition(ort_id,raum_id,kurzbezeichnung) -> {"success":True|False,id}
 	* addItem(name,notiz,visible_with_no_login,position_id,nutzer_id,foto_id) -> {"success":True|False,id}
 
