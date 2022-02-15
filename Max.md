@@ -1,2 +1,2 @@
-Was ist rot und scshlecht für die Zähne?
+Was ist rot und schlecht für die Zähne?
 ein fliegender Backstein
