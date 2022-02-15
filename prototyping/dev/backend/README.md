@@ -1,0 +1,3 @@
+Es gibt eine Art API-Framework, das uns eine Reihe von Aufgaben abnimmt...
+
+checkout https://github.com/gruener-campus-malchow/DIE
