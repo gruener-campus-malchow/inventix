@@ -78,13 +78,13 @@ class Api {
 			}
 			else
 			{
-				//GET WORKFLOW
-				if ($this->request[0]!='' and !array_key_exists(1,$this->request))
+			//GET WORKFLOW
+				if ($this->request[1]!='' and !array_key_exists(2,$this->request))
 				{
 					$data = $modelObject->readSingle($this->request[1]);
 					//$data = array('try the GET path and boring Things');
 				}
-				elseif ($this->request[0]!='' and $this->request[1]!='')
+				elseif ($this->request[1]!='' and $this->request[2]!='')
 				{
 					$data = $modelObject->getSpecial();    
 					//$data = array('try the GET path and Special Things');
