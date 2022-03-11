@@ -6,16 +6,25 @@
     <title>Titel</title>
   </head>
   <body>
+
+	<form method=get>
+	<input type=input name=qrtext value="input text for QRC here">
+	<input type=submit name=submit value=submit>
+	</form>
+
   <?php
-    require 'lib\phpqrcode-2010100721_1.1.4\phpqrcode\qrlib.php';
+	if (isset($_GET['qrtext']))
+	{
+		require 'lib/phpqrcode-2010100721_1.1.4/phpqrcode/qrlib.php';
 
-    $relativePathForDumping = 'QrCodes\\';
-    $url = 'String goes here (url still kinda buggi)';
+		$relativePathForDumping = 'QrCodes\\';
+		$url = $_GET['qrtext'];
 
-    QRcode::png($url, $relativePathForLib.$url.'.png');
-    echo '<img src="'.$relativePathForLib.$url.'.png"/>';
-    echo 'Hier is nen tolles bild';
-    
+		$temp = 'qrcodes_'.random_int(1,1000000);
+		QRcode::png($url, $relativePathForLib.$temp.'.png');
+		echo '<img src="'.$relativePathForLib.$temp.'.png"/>';
+		echo 'Hier is nen tolles bild';
+    }
     //phpinfo();
     ?>
   </body>
