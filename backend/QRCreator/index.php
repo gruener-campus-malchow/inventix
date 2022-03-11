@@ -9,7 +9,7 @@
   <?php
     require 'lib\phpqrcode-2010100721_1.1.4\phpqrcode\qrlib.php';
 
-    $relativePathForLib = 'QrCodes\\';
+    $relativePathForDumping = 'QrCodes\\';
     $url = 'String goes here (url still kinda buggi)';
 
     QRcode::png($url, $relativePathForLib.$url.'.png');
