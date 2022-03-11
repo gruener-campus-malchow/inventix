@@ -16,3 +16,9 @@ Felix - Schreiber
 - Recherche bestehender APIs und deren Dokumentation (Riot,Wikipedia)
 - Auserbeitung von dem Muster einer http request and unsere API
 - Erarbeitung der Route, Parameter und Antwort für Suchanfragen nach Namen. 
+
+# 11.3.2022
+- weiteres ausbauen der Muster für potenzielle http requests und der Antworten auf diese
+- ausarbeiten von präziserer Beschreibung für diverse Suchanfragen
+- anpassung älterer Muster an neue Anforderungen
+- Absprache mit der ERM Gruppe zur klärung was gebraucht wird
