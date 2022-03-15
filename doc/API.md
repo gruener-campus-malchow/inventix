@@ -1,6 +1,6 @@
 Hier wird die Rest API geplant
 
-#Muster der URI
+# Muster der URI
 https://inventix.gcm.schule/<API-Pfad>/<Parameter>
 
 #Suchanfragen
