@@ -1,0 +1,184 @@
+# https://sketchviz.com/new
+
+graph {
+
+
+#Entities
+    API[shape = box]
+    DB[shape = box3d]
+    Client[shape = box]
+    BE [shape = box3d,label = "Back_End"]
+
+
+#Relations
+
+    #Client,API,BE
+        kommuniziert1 [shape = diamond, label = "kommuniziert"]
+        kommuniziert2 [shape = diamond, label = "kommuniziert"]
+        kommuniziert3 [shape = diamond, label = "sendet"]
+        kommuniziert4 [shape = diamond, label = "kommuniziert"]
+    
+    #Items_Tabelle
+        befindet1 [shape = diamond, label = "befindet in"]
+        gespeichert1 [shape = diamond, label = "gespeichert"]
+        besitzt1 [shape = diamond, label = "besitzt"]
+    
+    #Tags_Kategorie_Tabelle --> Tags_Tabelle
+        hat1 [shape = diamond, style="dashed", label = "hat"]
+    
+    #QR-Code
+        ersteĺlt1 [shape = diamond, label = "erstellt"]
+    
+    #Items_Tabelle --> QR-Code
+        gespeichert2 [shape = diamond, style="dashed", label = "gespeichert in"]
+
+
+#Atribute
+
+    #Client sendet API
+        HTTP_Requests[shape=ellipse, fontcolor="purple", color="purple"]
+        JSON[shape=ellipse, fontcolor="purple", color="purple"]
+    
+    #User in User_Tabelle
+        Rechte [shape = note];
+        Identifikation [shape = note]
+            Password [shape = note]
+            Username [shape = note]
+            E_mail [shape = note, label = "E-mail"]
+            
+ 
+    #Items in Items_Tabelle
+        Locations [shape = note]
+            Raum [shape = component, fontcolor="red", color="red"]
+            Schrank [shape = component, fontcolor="red", color="red"]
+        
+        Docs [shape = note]
+        
+        Tags2[shape = note, label = "Tags"]
+            Klasse1 [shape = component, fontcolor="red", color="red", label = "Klasse"]
+            Lehrer [shape = component, fontcolor="red", color="red"]
+            Stufe [shape = component, fontcolor="red", color="red"]
+            LG [shape = component, fontcolor="red", color="red"]
+            Buch [shape = component, fontcolor="red", color="red"]
+            Zustand [shape = component, fontcolor="red", color="red"]
+            Fach_Bereich [shape = component, fontcolor="red", color="red"]
+
+        QR_code2 [shape = note, label = "QR-Code-URL"]
+    
+    #Tags in Tags-Kategorie-Tabelle
+        Name2 [shape = note, label = "Name"]
+        ID2 [shape = note, label = "ID"]
+
+    #Tags in Tags-Tabelle
+        ID1 [shape = note, label = "ID"]
+        Name [shape = note]
+        Kategorie [shape = note, label = "Kategorie-ID"]
+    
+    #QR-code
+        QR_Ersteller [shape = box,label = "Qr-code-ersteller"]
+        QR_code1 [shape = box,label = "Qr-Code"]
+        #Attribute
+            Datei_name1 [shape = ellipse, label = "Name"]
+            DB_Anfrage1 [shape = ellipse, label = "DB-Anfrage"]
+    
+    #Tabellen
+        User [shape = folder]
+        Items [shape = folder]
+        Tag_Kategorie [shape = folder, label = "Kategorie"]
+        Tags [shape = folder]
+    
+    
+#Relationen zwischen Dingen
+
+    #über BE
+        Client -- kommuniziert3 [label = "1"]
+        kommuniziert3 -- API [label = "1"]
+        HTTP_Requests -- kommuniziert3
+        API -- kommuniziert1 [label = "1"]
+        kommuniziert1 -- BE [label = "1"]
+        JSON -- kommuniziert1
+    
+    #BE mit QR
+        BE -- kommuniziert4 [label = "1"]
+        kommuniziert4 -- QR_Ersteller [label = "1"]
+    
+    #BE mit DB
+        BE -- kommuniziert2 [label = "1"]
+        kommuniziert2 -- DB [label = "1"]
+    
+    #unter DB
+        DB -- User
+        DB -- Tags
+        DB -- Items
+        DB -- Tag_Kategorie
+    
+    #zu QR
+        QR_code2 -- gespeichert2 [label = "1", style=dashed]
+        gespeichert2 -- Datei_name1 [label = "1",style=dashed]
+        ID2 -- hat1 [label = "1",style=dashed] 
+        hat1 -- Kategorie [label = "n",style=dashed]
+
+    #User
+        subgraph cluster_User {
+            label="User_Tabelle";
+    
+            User -- Rechte
+            User -- Identifikation
+        
+            Identifikation -- Password
+            Identifikation -- Username
+            Identifikation -- E_mail
+        }
+    
+    #Items
+        subgraph cluster_Items{
+            label="Items_Tabelle";
+            Items -- befindet1 [label = "m"]
+            befindet1 -- Locations [label = "n"]
+            Locations -- Raum [color="red"]
+            Raum -- Schrank [color="red"]
+            
+            Items -- gespeichert1 [label = "m"]
+            gespeichert1 -- Docs [label = "n"]
+            
+            Items -- besitzt1 [label = "m"]
+            besitzt1 -- Tags2 [label = "n"]
+            
+            Items -- QR_code2
+            
+            #Beispiel Tags
+                Tags2 -- Buch [color="red"]
+                Klasse1 -- Lehrer [color="red"]
+                Klasse1 -- Stufe [color="red"]
+                Klasse1 -- LG [color="red"]
+                
+                Tags2 -- Klasse1 [color="red"]
+                Tags2 -- Zustand [color="red"]
+                Tags2 -- Fach_Bereich [color="red"]
+        }
+    
+    #tag-Kategorie
+        subgraph cluster_tag_Kategorie{
+            label="Tags_Kategorie_Tabelle";
+            Tag_Kategorie -- Name2
+            Tag_Kategorie -- ID2
+        }
+        
+    #Tags
+        subgraph cluster_Tags {
+            label="Tags_Tabelle";
+            Tags -- ID1
+            Tags -- Name
+            Tags -- Kategorie
+        }
+        
+    #QR-code
+        subgraph cluster_QR_code{
+            label="QR_code";
+            QR_Ersteller -- ersteĺlt1 [label = "1"]
+            ersteĺlt1 -- QR_code1 [label = "n"]
+            QR_code1 -- Datei_name1
+            QR_code1 -- DB_Anfrage1
+        
+        }
+}
