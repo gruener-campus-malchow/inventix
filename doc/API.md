@@ -1,7 +1,7 @@
 Hier wird die Rest API geplant
 
 # Muster der URI
-https://inventix.gcm.schule/<API-Pfad>/<Parameter>
+https://inventix.org/{API-Pfad}/{Parameter}
 
 # Suchanfragen
 
@@ -21,6 +21,7 @@ Verarbeitet Nutzeranfragen nach Name und gibt ein Feld von Items zurück, welche
 				name: string,
                 id: number,
                 tags: [],
+                qrCodeUrl: string
                 // Additional Object Data
 			},
 			...
@@ -31,6 +32,7 @@ Verarbeitet Nutzeranfragen nach Name und gibt ein Feld von Items zurück, welche
 ## Suchanfrage Item (nach Tag ids)
 Gibt Items aus der Datenbank aus, denen Tags der Suchanfrage zugeordnet sind.
 Achtung! Parameter im Body, nicht in der URL senden!
+
 - GET
 - /search-items-by-tag-ids/
 - Parameter (tag ids) im Request Body (JSON) als Array, wie folgt aufgebaut:
@@ -54,9 +56,11 @@ Achtung! Parameter im Body, nicht in der URL senden!
                 tags: [
                     {
                         categoryName: string,
-                        categoryId: number 
+                        categoryId: number,
+                        synonyms: [ "", "", ... ]
                     }
                 ],
+                qrCodeUrl: string
                 // Additional Object Data
 			},
 			...
@@ -66,6 +70,7 @@ Achtung! Parameter im Body, nicht in der URL senden!
 
 ## Suchanfrage Tag (nach Name)
 Sucht nach Tags, die der Suchanfrage entsprechen.
+
 - GET
 - /search-tags-by-name/{name_query}
 - name_query = Nutzereingabe in das Suchfeld
@@ -77,6 +82,7 @@ Sucht nach Tags, die der Suchanfrage entsprechen.
 		[
 			{
 				name: string,
+                synonyms: [ "", "", ... ],
                 id: number,
                 categoryName: string,
                 categoryId: number, 
@@ -89,6 +95,7 @@ Sucht nach Tags, die der Suchanfrage entsprechen.
 
 ## Liste der Tags nach Tag-Kategorie
 Sucht nach Tags, die der gesuchten Kategorie entsprechen.
+
 - GET
 - /get-tags-by-category/{category_id}
 - category_id = Id der Kategorie deren Tags gelistet werden sollen
@@ -100,6 +107,7 @@ Sucht nach Tags, die der gesuchten Kategorie entsprechen.
 		[
 			{
 				name: string,
+                synonyms: [ "", "", ... ]
 				id: number,
                 categoryName: string,
                 categoryId: number 
@@ -110,7 +118,31 @@ Sucht nach Tags, die der gesuchten Kategorie entsprechen.
 ```
 
 ## Liste der existierenden Tags
-Listet alle Tags auf.
+Listet alle verfügbaren Tags auf.
+
+- GET
+- /get-all-tags
+- Antwort:
+```js
+{
+	resultCount: number,
+	tags : 
+		[
+			{
+				name: string,
+				id: number,
+                synonyms: [ "", "", ... ],
+                categoryName: string,
+                categoryId: number 
+			},
+			...
+		]	
+}
+```
+
+## Liste der von Usern vorgeschlagenen Tags
+Listet alle Tags auf, die noch nicht von einem Admin bestätigt oder verworfen wurden und die eventuell.
+
 - GET
 - /get-all-tags
 - Antwort:
@@ -131,7 +163,8 @@ Listet alle Tags auf.
 ```
 
 ## Liste der existierenden Tag-Kategorien
-Listet alle existierenden Tagkategorien auf.
+Listet alle existierenden und verfügbaren Tagkategorien auf.
+
 - GET
 - /get-all-tag-categories
 - Antwort:
@@ -148,3 +181,87 @@ Listet alle existierenden Tagkategorien auf.
 		]	
 }
 ```
+
+# Create-Funktionalitäten
+
+## Anlegen eines Items
+Erstellt ein neues item in der Datenbank und weist diesem verschiedene Werte zu.
+Achtung! Parameter im Body, nicht in der URL senden!
+- POST
+- /create-item
+- Parameter des neuen Items im Request Body (JSON), wie folgt aufgebaut:
+```js
+{
+    name: string,
+    description: string,
+    tags : [
+        id_1, id_2, id_3, ..., id_n // as numbers
+    ],
+    // Additional Object Data
+}
+```
+
+## Anlegen eines Tags (nur Admin)
+Erstellt ein neues Tag in der Datenbank, welchen Items zugewiesen werden kann.
+Achtung! Parameter im Body, nicht in der URL senden!
+- POST
+- /create-tag
+- Parameter des neuen Items im Request Body (JSON), wie folgt aufgebaut:
+```js
+{
+    name: string,
+    synonyms: ["", "", "", ...]
+    description: string,
+    categoryId : number
+}
+```
+
+## Anlegen (bzw. Vorschlagen) eines Tags (Standarduser)
+Möglichkeit ein neues Tag vorzuschlagen. Muss erst von einem Admin genehmigt werden, damit es verwendet und gelistet werden kann.
+Achtung! Parameter im Body, nicht in der URL senden!
+- POST
+- /create-tag-suggestion
+- Parameter des neuen Items im Request Body (JSON), wie folgt aufgebaut:
+```js
+{
+    name: string,
+    synonyms: ["", ""],
+    description: string,
+    categoryId : number
+}
+```
+
+# Update-Funktionalitäten
+
+## Aktualisieren eines Itemdatensatzes
+Achtung! Zusätzliche Parameter im Body!
+- PUT
+- /update-item/{item_id}
+- Aktualisierte Datensätze des Items im Request Body (JSON), wie folgt aufgebaut. Alle Parameter sind optional:
+```js
+{
+    name: string,
+    description: string,
+    tags : [
+        id_1, id_2, id_3, ..., id_n // as numbers
+    ],
+    // Additional Object Data
+}
+```
+
+## Aktualisieren eines Tag-Datensatzes
+TODO
+
+# Delete-Funktionalitäten
+
+## Löschen eines Tags (nur Admin)
+Löscht ein Tag.
+- DELETE
+- /delete-tag/{tag_id}
+- tag_id = id des Tags
+
+## Löschen eines Items (nur Admin)
+Entfernt ein Item von der Datenbank.
+- DELETE
+- /delete-item/{item_id}
+- item_id = id des Items
