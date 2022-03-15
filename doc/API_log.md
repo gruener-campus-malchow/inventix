@@ -1,6 +1,6 @@
 Hier wird die Entwicklung der API dokumentiert
 
-##Arbeitsteilung:
+## Arbeitsteilung:
 Herr Droste - Manager des DOC 
 Arthur - Zeitwächter
 Felix - Schreiber

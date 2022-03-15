@@ -3,9 +3,9 @@ Hier wird die Rest API geplant
 # Muster der URI
 https://inventix.gcm.schule/<API-Pfad>/<Parameter>
 
-#Suchanfragen
+# Suchanfragen
 
-##Suchanfrage Item (nach Name)
+## Suchanfrage Item (nach Name)
 Verarbeitet Nutzeranfragen nach Name und gibt ein Feld von Items zurück, welches die Ergebnisse enthält.
 
 - GET
@@ -28,7 +28,7 @@ Verarbeitet Nutzeranfragen nach Name und gibt ein Feld von Items zurück, welche
 }
 ```
 
-##Suchanfrage Item (nach Tag id)
+## Suchanfrage Item (nach Tag id)
 Gibt Items aus der Datenbank aus, denen Tags der Suchanfrage zugeordnet sind.
 Achtung! Parameter im Body, nicht in der URL senden!
 - GET
@@ -59,12 +59,12 @@ Achtung! Parameter im Body, nicht in der URL senden!
 }
 ```
 
-##Suchanfrage Tag (nach Name)
+## Suchanfrage Tag (nach Name)
 - GET
 - /search-tags-by-name/{name_query}
 - name_query = Nutzereingabe in das Suchfeld
 
-##Liste der existierenden Tags
+## Liste der existierenden Tags
 - GET
 - /get-all-tags
 - Antwort:
