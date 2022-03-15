@@ -28,7 +28,7 @@ Verarbeitet Nutzeranfragen nach Name und gibt ein Feld von Items zurück, welche
 }
 ```
 
-## Suchanfrage Item (nach Tag id)
+## Suchanfrage Item (nach Tag ids)
 Gibt Items aus der Datenbank aus, denen Tags der Suchanfrage zugeordnet sind.
 Achtung! Parameter im Body, nicht in der URL senden!
 - GET
@@ -51,7 +51,12 @@ Achtung! Parameter im Body, nicht in der URL senden!
 			{
 				name: string,
                 id: number,
-                tags: [],
+                tags: [
+                    {
+                        categoryName: string,
+                        categoryId: number 
+                    }
+                ],
                 // Additional Object Data
 			},
 			...
@@ -60,11 +65,52 @@ Achtung! Parameter im Body, nicht in der URL senden!
 ```
 
 ## Suchanfrage Tag (nach Name)
+Sucht nach Tags, die der Suchanfrage entsprechen.
 - GET
 - /search-tags-by-name/{name_query}
 - name_query = Nutzereingabe in das Suchfeld
+- Antwort:
+```js
+{
+	resultCount: number,
+	results:
+		[
+			{
+				name: string,
+                id: number,
+                categoryName: string,
+                categoryId: number, 
+                // Additional Object Data
+			},
+			...
+		]
+}
+```
+
+## Liste der Tags nach Tag-Kategorie
+Sucht nach Tags, die der gesuchten Kategorie entsprechen.
+- GET
+- /get-tags-by-category/{category_id}
+- category_id = Id der Kategorie deren Tags gelistet werden sollen
+- Antwort:
+```js
+{
+	resultCount: number,
+	tags : 
+		[
+			{
+				name: string,
+				id: number,
+                categoryName: string,
+                categoryId: number 
+			},
+			...
+		]	
+}
+```
 
 ## Liste der existierenden Tags
+Listet alle Tags auf.
 - GET
 - /get-all-tags
 - Antwort:
@@ -72,6 +118,27 @@ Achtung! Parameter im Body, nicht in der URL senden!
 {
 	resultCount: number,
 	tags : 
+		[
+			{
+				name: string,
+				id: number,
+                categoryName: string,
+                categoryId: number 
+			},
+			...
+		]	
+}
+```
+
+## Liste der existierenden Tag-Kategorien
+Listet alle existierenden Tagkategorien auf.
+- GET
+- /get-all-tag-categories
+- Antwort:
+```js
+{
+	resultCount: number,
+	tagCategories : 
 		[
 			{
 				name: string,

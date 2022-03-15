@@ -22,3 +22,7 @@ Felix - Schreiber
 - ausarbeiten von präziserer Beschreibung für diverse Suchanfragen
 - anpassung älterer Muster an neue Anforderungen
 - Absprache mit der ERM Gruppe zur klärung was gebraucht wird
+
+## 15.3.2022
+- Scrum mit Klasse
+- Fertigstellung der Dokumentation von Get requests an die API
