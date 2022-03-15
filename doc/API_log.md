@@ -26,3 +26,5 @@ Felix - Schreiber
 ## 15.3.2022
 - Scrum mit Klasse
 - Fertigstellung der Dokumentation von Get requests an die API
+- Delete Anfragen vollständig notiert
+- Update Anfragen begonnen
