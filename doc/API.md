@@ -275,8 +275,6 @@ Achtung! Zusätzliche Parameter im Body!
 Bestätigt einen einzelnen Tag der von Nutzern vorgeschlagen wurde.
 - PUT
 - ``/approve-tag/{tag_id}``
-name_query = Nutzereingabe in das search-items-by-name/{name_query}
-name_query = Nutzereingabe in das 
 
 # Delete-Funktionalitäten
 
