@@ -28,3 +28,7 @@ Felix - Schreiber
 - Fertigstellung der Dokumentation von Get requests an die API
 - Delete Anfragen vollständig notiert
 - Update Anfragen begonnen
+
+## 22.3.2022
+- Scrum mit Klasse
+- Finale schliffe an der Dokumentation der API
