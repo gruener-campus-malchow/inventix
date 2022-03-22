@@ -32,3 +32,6 @@ Felix - Schreiber
 ## 22.3.2022
 - Scrum mit Klasse
 - Finale schliffe an der Dokumentation der API
+- Sprint review mit Klasse
+    - Vorstellung der Ergebnisse
+- Korrektur letzter Fehler

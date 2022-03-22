@@ -274,7 +274,7 @@ Achtung! Zusätzliche Parameter im Body!
 ## Bestätigen eines vorgeschlagenen Nutzer-Tags (nur Admin)
 Bestätigt einen einzelnen Tag der von Nutzern vorgeschlagen wurde.
 - PUT
-- ``/approve-tag/{tag_id}search-items-by-name/{name_query}``
+- ``/approve-tag/{tag_id}``
 name_query = Nutzereingabe in das search-items-by-name/{name_query}
 name_query = Nutzereingabe in das 
 
