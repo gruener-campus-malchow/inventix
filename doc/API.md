@@ -9,7 +9,7 @@ https://inventix.org/{API-Pfad}/{Parameter}
 Verarbeitet Nutzeranfragen nach Name und gibt ein Feld von Items zurück, welches die Ergebnisse enthält.
 
 - GET
-- /search-items-by-name/{name_query}
+- ``/search-items-by-name/{name_query}``
 - name_query = Nutzereingabe in das Suchfeld
 - Antwort: JSON objekt mit array der möglichen Suchergebnisse und Anzahl
 ```js
@@ -34,7 +34,7 @@ Gibt Items aus der Datenbank aus, denen Tags der Suchanfrage zugeordnet sind.
 Achtung! Parameter im Body, nicht in der URL senden!
 
 - GET
-- /search-items-by-tag-ids/
+- ``/search-items-by-tag-ids/``
 - Parameter (tag ids) im Request Body (JSON) als Array, wie folgt aufgebaut:
 ```js
     {
@@ -72,7 +72,7 @@ Achtung! Parameter im Body, nicht in der URL senden!
 Sucht nach Tags, die der Suchanfrage entsprechen.
 
 - GET
-- /search-tags-by-name/{name_query}
+- ``/search-tags-by-name/{name_query}``
 - name_query = Nutzereingabe in das Suchfeld
 - Antwort:
 ```js
@@ -104,7 +104,7 @@ Beispielkategorien:
 
 **Anfrage**
 - GET
-- /get-tags-by-category/{category_id}
+- ``/get-tags-by-category/{category_id}``
 - category_id = Id der Kategorie deren Tags gelistet werden sollen
 - Antwort:
 ```js
@@ -128,7 +128,7 @@ Beispielkategorien:
 Listet alle verfügbaren Tags auf.
 
 - GET
-- /get-all-tags
+- ``/get-all-tags``
 - Antwort:
 ```js
     {
@@ -151,7 +151,7 @@ Listet alle verfügbaren Tags auf.
 Listet alle Tags auf, die noch nicht von einem Admin bestätigt oder verworfen wurden und die eventuell zugelassen werden.
 
 - GET
-- /get-suggested-tags
+- ``/get-suggested-tags``
 - Antwort:
 ```js
     {
@@ -173,7 +173,7 @@ Listet alle Tags auf, die noch nicht von einem Admin bestätigt oder verworfen w
 Listet alle existierenden und verfügbaren Tagkategorien auf.
 
 - GET
-- /get-all-tag-categories
+- ``/get-all-tag-categories``
 - Antwort:
 ```js
     {
@@ -195,7 +195,7 @@ Listet alle existierenden und verfügbaren Tagkategorien auf.
 Erstellt ein neues item in der Datenbank und weist diesem verschiedene Werte zu.
 Achtung! Parameter im Body, nicht in der URL senden!
 - POST
-- /create-item
+- ``/create-item``
 - Parameter des neuen Items im Request Body (JSON), wie folgt aufgebaut:
 ```js
     {
@@ -212,7 +212,7 @@ Achtung! Parameter im Body, nicht in der URL senden!
 Erstellt ein neues Tag in der Datenbank, welchen Items zugewiesen werden kann.
 Achtung! Parameter im Body, nicht in der URL senden!
 - POST
-- /create-tag
+- ``/create-tag``
 - Parameter des neuen Items im Request Body (JSON), wie folgt aufgebaut:
 ```js
     {
@@ -227,7 +227,7 @@ Achtung! Parameter im Body, nicht in der URL senden!
 Möglichkeit ein neues Tag vorzuschlagen. Muss erst von einem Admin genehmigt werden, damit es verwendet und gelistet werden kann.
 Achtung! Parameter im Body, nicht in der URL senden!
 - POST
-- /create-tag-suggestion
+- ``/create-tag-suggestion``
 - Parameter des neuen Items im Request Body (JSON), wie folgt aufgebaut:
 ```js
     {
@@ -243,7 +243,7 @@ Achtung! Parameter im Body, nicht in der URL senden!
 ## Aktualisieren eines Itemdatensatzes
 Achtung! Zusätzliche Parameter im Body!
 - PUT
-- /update-item/{item_id}
+- ``/update-item/{item_id}``
 - Aktualisierte Datensätze des Items im Request Body (JSON), wie folgt aufgebaut. Alle Parameter sind optional, nur zu verändernde Datensätze müssen übertragen werden.
 ```js
     {
@@ -259,7 +259,7 @@ Achtung! Zusätzliche Parameter im Body!
 ## Aktualisieren eines Tag-Datensatzes
 Achtung! Zusätzliche Parameter im Body!
 - PUT
-- /update-tag/{tag_id}
+- ``/update-tag/{tag_id}``
 - tag_id - Id des zu verändernden Tags
 - Aktualisierte Parameter des Tags im Request Body (JSON), wie folgt aufgebaut. Alle Parameter sind optional, nur zu verändernde Datensätze müssen übertragen werden.
 ```js
@@ -274,18 +274,20 @@ Achtung! Zusätzliche Parameter im Body!
 ## Bestätigen eines vorgeschlagenen Nutzer-Tags (nur Admin)
 Bestätigt einen einzelnen Tag der von Nutzern vorgeschlagen wurde.
 - PUT
-- /approve-tag/{tag_id}
+- ``/approve-tag/{tag_id}search-items-by-name/{name_query}``
+name_query = Nutzereingabe in das search-items-by-name/{name_query}
+name_query = Nutzereingabe in das 
 
 # Delete-Funktionalitäten
 
 ## Löschen eines Tags (nur Admin)
 Löscht ein Tag.
 - DELETE
-- /delete-tag/{tag_id}
+- ``/delete-tag/{tag_id}``
 - tag_id = id des Tags
 
 ## Löschen eines Items (nur Admin)
 Entfernt ein Item von der Datenbank.
 - DELETE
-- /delete-item/{item_id}
+- ``/delete-item/{item_id}``
 - item_id = id des Items
