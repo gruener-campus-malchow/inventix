@@ -1,0 +1,16 @@
+User(Email, Username, Firstname, Lastname, Hash, _ID_)
+
+# 1:1 Relationships
+# Alle Attribute der einen Entität wird auf die andere übertragen.
+
+
+
+# 1:n Relationships
+# Der Primärschlüssel der 1-Entität wird als Fremdschlüssel der n-Entität übernommen.
+
+User(Email, Username, Firstname, Lastname, Hash, _ID_, Items.ID)
+
+# n:m Relationships
+# Man erstellt eine neue Entität mit dem Namen der Beziehung. Die Primärschlüssel der beteiligten Entitäten werden als Fremdschlüssel als zusammengesetzter Primärschlüssel in der neuen Entität geführt.
+
+ItemsHaveTags(_Items.ID_, _Tags.ID_)

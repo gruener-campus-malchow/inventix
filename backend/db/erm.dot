@@ -1,0 +1,161 @@
+graph ERM {
+ rankdir=LR;
+
+# user -> item
+    u_i_1 [label = "update", shape = "diamond"]
+    u_i_2 [label = "read", shape = "diamond"]
+    u_i_3 [label = "manage", shape = "diamond"]
+    
+# user -> role
+    u_r_1  [label = "assigned", shape = "diamond"]
+    
+# have
+    i_t_1 [label = "have", shape = "diamond"]
+    t_c_1 [label = "have", shape = "diamond"]
+
+    i_c_1 [label = "must \n have", shape = "diamond"]
+    
+    u_l_1 [label = "has to \n be", shape = "diamond"]
+ 
+    co_i_1 [label = "describes", shape = "diamond"]
+    
+    Contains [label="Contains", shape="diamond", color="orange"]
+    
+    c_r_1 [label = "accesses", shape = "diamond"]
+ 
+    
+# objekte
+
+    User [shape = "box"]
+    
+    Items [shape = "box"]
+    
+    Locations [shape = "box"]
+    
+    Categories [shape = "box"]
+    
+    Tags [shape = "box"]
+    
+    Role [shape = "box"]
+    
+    Description [shape = "box"]
+
+
+# Attribute
+    
+    #User
+        u_Email [label = "Email"]
+        u_userName [label = "Username"]
+        u_firstName [label = "Firstname"]
+        u_lastName [label = "Lastname"]
+        u_hash [label = "Hash"]
+        u_id [label = "ID"]
+    
+    #Items
+        i_id [label = "ID"]
+        i_name [label = "Name"]
+        
+    # Tags
+        t_id [label = "ID"]
+        # t_content [label = "content"] [color = "orange"]
+        t_label [label = "Label"]
+        
+    # Categories
+        c_name [label = "Name"]
+        c_id [label = "ID"]
+        
+    #Description
+        d_id [label = "ID"]
+        d_text [label = "Text"]
+        
+    # Locations
+        lo_id [label = "ID"]
+        lo_Room [label = "Room"]
+        lo_House [label = "House"]
+    
+# Relationships
+
+    # u_i
+        User -- u_i_1 [label = "n"]
+        User -- u_i_2 [label = "n"]
+        User -- u_i_3 [label = "1"]
+    
+        u_i_1 -- Items [label = "m"]
+        u_i_2 -- Items [label = "m"]
+        u_i_3 -- Items [label = "n"]
+    
+    # i_t
+        Items -- i_t_1 [label = "m"]
+        i_t_1 -- Tags [label = "n"]
+        
+    # i_c
+        Items -- i_c_1 [label = "n"]
+        i_c_1 -- Categories [label = "m"]
+        
+    # t_c
+        Tags -- t_c_1 [label = "m"]
+        t_c_1 -- Categories [label = "n"]
+        
+    # i_l
+        Items -- u_l_1 [label = "n"]
+        u_l_1 -- Locations [label = "1"]
+        
+    # u_r
+        User -- u_r_1 [label = "n"]
+        u_r_1 -- Role [label = "m"]
+    
+    # co_i
+        co_i_1 -- Items [label = "n"]
+        co_i_1 -- Description [label = "1"]
+        
+    # Items
+        Items -- Contains
+        Contains -- Items
+        
+    # Role-Categories
+        Categories -- c_r_1 [label = "n"]
+        c_r_1 -- Role [label = "m"]
+        
+        
+
+# Attribute zuweisen
+    
+    # User
+        u_hash -- User
+        u_Email -- User
+        u_firstName -- User
+        u_lastName -- User
+        u_userName -- User
+        u_id -- User
+    
+    # Items
+        Items -- i_id
+        Items -- i_name
+        
+    # Tags
+        Tags -- t_id
+        #Tags -- t_content 
+        Tags -- t_label
+        
+    # Categories
+        c_name -- Categories
+        c_id -- Categories
+
+    # Description
+        Description -- d_id
+        Description -- d_text
+
+    # Locations
+    
+        Locations -- lo_id
+        Locations -- lo_House
+        Locations -- lo_Room
+       # Locations -- Container
+    # Role
+    
+        Role -- Read
+        Role -- Write
+        Role -- ID
+        Role -- Name
+        
+}
