@@ -1,16 +1,31 @@
 User(Email, Username, Firstname, Lastname, Hash, _ID_)
+UserUpdateItems(_Items.ID_, _User.ID_)
+UserReadItems(_User.ID_, _Items.ID_)
+UsersAssignedRole(_User.ID_, _Role.ID_)
 
-# 1:1 Relationships
-# Alle Attribute der einen Entität wird auf die andere übertragen.
+Items (_ID_, Name, User.ID, ???Items.ID???)
+
+<!-- ab hier überprüfen-->
+
+Locations(Room, House, _ID_, Items.ID)
+Role (Read, Write, _ID_, Name)
+Tags (Label, _ID_)
+
+ItemsMusthaveTags(_Items.ID_, _Tags.ID_)
+ItemsMusthaveCategories(_Items.ID_, _Categories.ID_)
+RoleAccessesCategories (_Role.ID_, _Categories.ID_)
+
+Description (Text, _ID_)
 
 
+TagsHaveCategories(_Tags.ID_, _Categories.ID_)
 
-# 1:n Relationships
-# Der Primärschlüssel der 1-Entität wird als Fremdschlüssel der n-Entität übernommen.
+ItemsHasToBe (House, Rooms, ID) 
+Categories(_ID_, Name)
 
-User(Email, Username, Firstname, Lastname, Hash, _ID_, Items.ID)
 
-# n:m Relationships
-# Man erstellt eine neue Entität mit dem Namen der Beziehung. Die Primärschlüssel der beteiligten Entitäten werden als Fremdschlüssel als zusammengesetzter Primärschlüssel in der neuen Entität geführt.
+DescriptionDescribesItems (_Item.ID_, _Description.ID_)
 
-ItemsHaveTags(_Items.ID_, _Tags.ID_)
+chan chan ai chiki chiki ban ban!
+
+
