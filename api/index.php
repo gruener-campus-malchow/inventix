@@ -60,12 +60,12 @@ class Api {
 		
 			if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 				// POST WORKFLOW
-				if ($this->request[0]!='' and !array_key_exists(1,$this->request))
+				if ($this->request[1]!='' and !array_key_exists(2,$this->request))
 				{
-					$data = $modelObject->update($this->request[0]);
+					$data = $modelObject->update($this->request[1]);
 					//$data = array('try the GET path and boring Things');
 				}
-				elseif ($this->request[0]!='' and $this->request[1]!='')
+				elseif ($this->request[1]!='' and $this->request[2]!='')
 				{
 					$data = $modelObject->postSpecial();    
 					//$data = array('try the GET path and Special Things');
