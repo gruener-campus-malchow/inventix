@@ -19,8 +19,6 @@ graph ERM {
  
     co_i_1 [label = "describes", shape = "diamond"]
     
-    Contains [label="Contains", shape="diamond", color="orange"]
-    
     c_r_1 [label = "accesses", shape = "diamond"]
  
     
@@ -108,9 +106,6 @@ graph ERM {
         co_i_1 -- Items [label = "n"]
         co_i_1 -- Description [label = "1"]
         
-    # Items
-        Items -- Contains
-        Contains -- Items
         
     # Role-Categories
         Categories -- c_r_1 [label = "n"]
