@@ -1,18 +1,21 @@
-User(Email, Username, Firstname, Lastname, Hash, _ID_)
-UserUpdateItems(_Items.ID_, _User.ID_)
-UserReadItems(_User.ID_, _Items.ID_)
-UsersAssignedRole(_User.ID_, _Role.ID_)
+items (__id__, Name, locations.id_fk, description.id_fk, managed_by_user.id_fk) <!-- Item Tabelle-->
+user (__id__, firstname, lastname, username, email, passwort_hash, role.id_fk, <!-- User Tabelle -->
+tags (__id__, label, status, categories.id_fk, <!-- Tag Tabelle-->
+role (__id__, name, write, <!-- Rollen Tabelle -->
+categories (__id__, name, <!-- Kategorien Tabelle -->
 
-Items (_ID_, Name, User.ID, ???Items.ID???)
+item_tag(item.id_fk, tag.id_fk) <!-- Item besitzt Tag -->
+item_category(item.id_fk, categories.id_fk) <!-- Item gehört zu Kategorie -->
+user_role(user.id_fk, role.id_fk) <!-- User besitzt Rolle -->
+update_item(user.id_fk, item.id_fk) <!-- User darf Item updaten -->
+read_item(role.id_fk, categories.id_fk) <!-- User darf Kategorie sehen -->
+
+description (__id__, text, status)  <!-- Beschreibung Tabelle -->
+locations (__house__, __room__, __specification__) <!-- Locations Tabelle -->
+
 
 <!-- ab hier überprüfen-->
 
-Locations(Room, House, _ID_, Items.ID)
-Role (Read, Write, _ID_, Name)
-Tags (Label, _ID_)
-
-ItemsMusthaveTags(_Items.ID_, _Tags.ID_)
-ItemsMusthaveCategories(_Items.ID_, _Categories.ID_)
 RoleAccessesCategories (_Role.ID_, _Categories.ID_)
 
 Description (Text, _ID_)
@@ -21,11 +24,6 @@ Description (Text, _ID_)
 TagsHaveCategories(_Tags.ID_, _Categories.ID_)
 
 ItemsHasToBe (House, Rooms, ID) 
-Categories(_ID_, Name)
 
 
 DescriptionDescribesItems (_Item.ID_, _Description.ID_)
-
-chan chan ai chiki chiki ban ban!
-
-
