@@ -56,18 +56,3 @@ read_item(user.id_fk, items.id_fk) <!-- User darf Item sehen -->
 
 description (__id__, text, status)  <!-- Beschreibung Tabelle -->
 locations (__house__, __room__, __specification__) <!-- Locations Tabelle -->
-
-
-<!-- ab hier überprüfen-->
-
-RoleAccessesCategories (_Role.ID_, _Categories.ID_)
-
-Description (Text, _ID_)
-
-
-TagsHaveCategories(_Tags.ID_, _Categories.ID_)
-
-ItemsHasToBe (House, Rooms, ID) 
-
-
-DescriptionDescribesItems (_Item.ID_, _Description.ID_)
