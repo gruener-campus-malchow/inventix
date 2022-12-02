@@ -1,14 +1,21 @@
-items (__id__, Name, locations.id_fk, description.id_fk, managed_by_user.id_fk) <!-- Item Tabelle-->
-user (__id__, firstname, lastname, username, email, passwort_hash, role.id_fk, <!-- User Tabelle -->
-tags (__id__, label, status, categories.id_fk, <!-- Tag Tabelle-->
-role (__id__, name, write, <!-- Rollen Tabelle -->
+items (__id__, Name, last-updated, locations.id_fk, description.id_fk, managed_by_user.id_fk) <!-- Item Tabelle-->
+user (__id__, firstname, lastname, username, email, passwort_hash, role.id_fk,  <!-- User Tabelle -->
+tags (__id__, label, status, categories.id_fk) <!-- Tag Tabelle-->
+role (__id__, name, create, <!-- Rollen Tabelle -->
 categories (__id__, name, <!-- Kategorien Tabelle -->
+
+
 
 item_tag(item.id_fk, tag.id_fk) <!-- Item besitzt Tag -->
 item_category(item.id_fk, categories.id_fk) <!-- Item gehört zu Kategorie -->
 user_role(user.id_fk, role.id_fk) <!-- User besitzt Rolle -->
+darf rolle item zu kategorie hinzufügen (
+darf rolle tags zu kategorie hinzufügen (
+darf rolle hinzufügen 
+
 update_item(user.id_fk, item.id_fk) <!-- User darf Item updaten -->
-read_item(role.id_fk, categories.id_fk) <!-- User darf Kategorie sehen -->
+read_categories(role.id_fk, categories.id_fk) <!-- User darf Kategorie sehen -->
+read_item(user.id_fk, items.id_fk) <!-- User darf Item sehen -->
 
 description (__id__, text, status)  <!-- Beschreibung Tabelle -->
 locations (__house__, __room__, __specification__) <!-- Locations Tabelle -->
