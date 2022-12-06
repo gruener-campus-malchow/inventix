@@ -13,7 +13,7 @@ graph ERM {
     i_t_1 [label = "have", shape = "diamond"]
     t_c_1 [label = "have", shape = "diamond"]
 
-    i_c_1 [label = "must \n have", shape = "diamond"]
+    i_c_1 [label = "must \n have tag*s from categorie*s", shape = "diamond"]
     
     u_l_1 [label = "has to \n be", shape = "diamond"]
  
