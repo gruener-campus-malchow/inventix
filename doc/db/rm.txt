@@ -2,15 +2,15 @@
 role (__id__, name, create, read, write)  <!-- Rollen Tabelle -->
 categories (__id__, name) <!-- Kategorien Tabelle -->
 
-assigned_role(user.id_fk, role.id_fk) <!-- User besitzt Rolle -->
-category_access ( role.id_fk, category.id_fk) <!-- Rolle darf auf zugreifen -->
+assigned_role(user_id_fk, role_id_fk) <!-- User besitzt Rolle -->
+category_access ( role_id_fk, category_id_fk) <!-- Rolle darf auf zugreifen -->
 
 
-user (__id__, firstname, lastname, username, email, passwort_hash, role.id_fk)  <!-- User Tabelle -->
-items (__id__, Name, last-updated, locations.id_fk, description.id_fk, managed_by_user.id_fk) <!-- Item Tabelle-->
-update_item(user.id_fk, item.id_fk) <!-- User darf Item updaten -->
-read_categories(role.id_fk, categories.id_fk) <!-- User darf Kategorie sehen -->
-read_item(user.id_fk, items.id_fk) <!-- User darf Item sehen -->
+user (__id__, firstname, lastname, username, email, passwort_hash, role_id_fk)  <!-- User Tabelle -->
+items (__id__, Name, locations_id_fk, description_id_fk, managed_by_user_id_fk) <!-- Item Tabelle-->
+update_item(user_id_fk, item.id_fk) <!-- User darf Item updaten -->
+read_categories(role_id_fk, categories_id_fk) <!-- User darf Kategorie sehen -->
+
 
 description (__id__, text, status)  <!-- Beschreibung Tabelle -->
 locations (__house__, __room__, __specification__) <!-- Locations Tabelle -->
