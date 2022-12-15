@@ -1,0 +1,11 @@
+INSERT INTO locations (house, room, specification)
+VALUES (
+"FG 2", "3.013", "Unterm Schrank");
+
+INSERT INTO description (text, status)
+VALUES(
+"Es ist ein Objekt", 1);
+
+INSERT INTO user ("hao", "chen", "greese", "email", "passwort_hash")
+
+
