@@ -1,0 +1,17 @@
+INSERT INTO user(firstname, lastname, username, email, passwort) VALUES("Beli","ileB","CCoomer", "belibullcrap@gmail.com","WE476ZTRWZ3GTFWUEGR76");
+
+INSERT INTO tags(label, status, category_id_fk) VALUES("Puttgemacht", "pending", 2);
+
+INSERT INTO role(name, `create`, read, write) VALUES("Admin", TRUE, TRUE, TRUE); 
+
+INSERT INTO locations VALUES("FG 3", "302", "Im Lehrertisch");
+
+INSERT INTO items(name, location_hause_fk, location_room_fk, location_specification_fk, description_id_fk) VALUES ("Chemie Buch gk13" "FG 3", "302", "Im Leherertisch", 1);
+
+INSERT INTO description(text, status) VALUES ("Macht Chemie Toll", "Approved");
+
+INSERT INTO category_access VALUES(1,1);
+
+INSERT INTO categories(name) VALUES("Buch");
+
+INSERT INTO assigned_role VALUES (1,1);
