@@ -61,3 +61,10 @@ CREATE TABLE IF NOT EXISTS `assigned_role` (
 	PRIMARY KEY(`user_id_fk`,`role_id_fk`),
 	FOREIGN KEY(`role_id_fk`) REFERENCES `role`(`id`)
 );
+
+CREATE TABLE item_tag (
+	item_id_fk Int NOT null,
+	tag_id_fk Int NOT null,
+    FOREIGN KEY (item_id_fk) REFERENCES items(id),
+    FOREIGN KEY (tag_id_fk) REFERENCES tags(id)
+);
