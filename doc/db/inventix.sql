@@ -75,3 +75,10 @@ CREATE TABLE read_category (
         FOREIGN KEY (role_id_fk) REFERENCES role(id),
         FOREIGN KEY (category_id_fk) REFERENCES categories(id)
 );
+
+CREATE TABLE tag_category (
+    tag_id_fk Int NOT null,
+    category_id_fk Int NOT null,
+    FOREIGN KEY (tag_id_fk) REFERENCES tags(id),
+    FOREIGN KEY (category_id_fk) REFERENCES categories(id)
+);
