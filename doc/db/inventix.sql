@@ -65,6 +65,6 @@ CREATE TABLE IF NOT EXISTS `assigned_role` (
 CREATE TABLE item_tag (
 	item_id_fk Int NOT null,
 	tag_id_fk Int NOT null,
-    FOREIGN KEY (item_id_fk) REFERENCES items(id),
-    FOREIGN KEY (tag_id_fk) REFERENCES tags(id)
+    	FOREIGN KEY (item_id_fk) REFERENCES items(id),
+    	FOREIGN KEY (tag_id_fk) REFERENCES tags(id)
 );
