@@ -27,7 +27,7 @@
     class QRimage {
     
         //----------------------------------------------------------------------
-        public static function png($frame, $filename = false, $pixelPerPoint = 4, $outerFrame = 4,$saveandprint=FALSE) 
+        public static function png($frame, $filename = false, $pixelPerPoint = 4, $outerFrame = 0,$saveandprint=FALSE)
         {
             $image = self::image($frame, $pixelPerPoint, $outerFrame);
             
@@ -48,7 +48,7 @@
         }
     
         //----------------------------------------------------------------------
-        public static function jpg($frame, $filename = false, $pixelPerPoint = 8, $outerFrame = 4, $q = 85) 
+        public static function jpg($frame, $filename = false, $pixelPerPoint = 8, $outerFrame = 0, $q = 85)
         {
             $image = self::image($frame, $pixelPerPoint, $outerFrame);
             
@@ -63,7 +63,7 @@
         }
     
         //----------------------------------------------------------------------
-        private static function image($frame, $pixelPerPoint = 4, $outerFrame = 4) 
+        private static function image($frame, $pixelPerPoint = 4, $outerFrame = 0)
         {
             $h = count($frame);
             $w = strlen($frame[0]);
