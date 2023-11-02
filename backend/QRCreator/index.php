@@ -21,8 +21,8 @@
 		$url = $_GET['qrtext'];
 
 		$temp = 'qrcodes_'.random_int(1,1000000);
-		QRcode::png($url, $relativePathForLib.$temp.'.png');
-		echo '<img src="'.$relativePathForLib.$temp.'.png"/>';
+        QRcode::png($url, $relativePathForDumping.$temp.'.png');
+		echo '<img src="'.$relativePathForDumping.$temp.'.png"/>';
 		echo 'Hier is nen tolles bild';
     }
     //phpinfo();
